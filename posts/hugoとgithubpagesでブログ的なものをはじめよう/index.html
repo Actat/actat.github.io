@@ -83,11 +83,11 @@ $ git submodule add git@github.com:[ username ]/[ username ].">
 
 <meta itemprop="datePublished" content="2019-04-14T21:59:04&#43;09:00" />
 <meta itemprop="dateModified" content="2019-04-14T21:59:04&#43;09:00" />
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="121">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="hugo,githubpages,環境構築," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HugoとGitHub Pagesでブログ的なものをはじめよう"/>
 <meta name="twitter:description" content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる．
@@ -287,7 +287,34 @@ draft: true
 
 <p>これから<code>$ hugo</code>してpublicの中に変更を反映してcommitしてpushすると，うまくすれば公開されるという算段．
 github.ioのほうでこれが読めているのであれば今後もこの手順で記事を追加できるということだ．</p>
+
+<p><del>本文のほうに「<code>draft: true</code>を<code>false</code>に変える」と書いたら実際に書き換えるのを忘れて時間が溶けたが</del> ここまでうまくいった．</p>
+
+<p>記事にタグを設定して参照性を高めることができるそうなので設定していく．
+頭に書き加えるとできるらしい．</p>
+
+<pre><code>---
+title: &quot;HugoとGitHub Pagesでブログ的なものをはじめよう&quot;
+date: 2019-04-14T21:59:04+09:00
+draft: false
+tags : [ &quot;hugo&quot;, &quot;githubpages&quot;, &quot;環境構築&quot;]
+---
+</code></pre>
+
+<p>とりあえずこんな感じにした．</p>
 <ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/hugo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hugo</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/githubpages" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">githubpages</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">環境構築</a>
+   </li>
   
 </ul>
 <div class="mt6">
