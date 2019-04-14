@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://actat.github.io/posts/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</loc>
+    <lastmod>2019-04-14T21:59:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -15,6 +22,13 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/posts/</loc>
+    <lastmod>2019-04-14T21:59:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -22,6 +36,7 @@
   
   <url>
     <loc>https://actat.github.io/</loc>
+    <lastmod>2019-04-14T21:59:04+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

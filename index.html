@@ -38,7 +38,7 @@
 
 
 
-
+<meta property="og:updated_time" content="2019-04-14T21:59:04&#43;09:00"/>
 
 
 
@@ -80,6 +80,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/about/" title="About page">
               About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
             </a>
           </li>
           
@@ -140,6 +146,66 @@
   
   
   
+  
+    
+    
+
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      
+       
+          <h1 class="flex-none">
+            
+          </h1>
+        
+
+      
+
+      <section class="w-100 mw8">
+        
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/" class="color-inherit dim link">
+            HugoとGitHub Pagesでブログ的なものをはじめよう
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる．
+手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒なのであまり更新しない，検索性が悪い，一度に書ける情報量が少ないといった問題点があった．
+ブログに記録すると良いという話を聞き，始めることにした． ここには開設する作業の記録を記す．
+どうしてHugoとGitHub Pagesなのか ブログの始め方には大きく分けて2種類ある．
+ ブログを書く専用のサービスを利用する（はてなブログなど） 自分でホームページを作る（今回はこっち）  これに関しては「趣味の問題」で後者にした． 一回くらいこういうのやってみたいと思ったから．
+とはいえサーバーの用意までやるつもりはないしどうしたものかと思ったときにGitHub Pagesの存在を思い出したので「ブログ githubpages」で検索． Jekyll + GitHub PagesとかHugo + GithHub Pagesとかいろいろあるらしいことが分かった． 「jekyll hugo」とgoogle先生に聞くとjekyllからhugoへ移行する方法がぽこぽこ出てくるのでHugoにした． ということでHugoとGitHub Pagesにした． ダメだったらやり直せばいいんや．
+ということで参考にしたかった人，いたらごめんなさい．
+作業内容 Quick Startに従ってテーマの追加まで作業した． インストールはWSLのUbuntuでapt installした． インストーラをダウンロードするとか再起動要求されるとかそういう面倒が発生しないのでWSLに入れれば済むものはそうしてしまいたい主義（あたまをつかわない）． Quick Startの通りにしたのでテーマもAnankeになっている． 気が向いたら変えるかもしれないし，ずっとこのままかもしれない．
+Anankeには丁寧に使い方が書かれているので，config.tomlをコピーして設定を書き，hero backgroundを携帯の中に入っていた適当な画像にした．
+themes/ananke/exampleSite/contentの中にあるaboutをcontentの中にコピーして_index.mdを編集した．
+出来上がりの確認は
+$ hugo server -D  してhttp://localhost:1313にアクセスする．
+config.tomlのbase urlをGitHub Pagesのものにして保存． ここまでの内容で普通のリポジトリとしてgithubにpushした．
+GitHub Pagesのためのリポジトリをgithub上で作成． 普段と違うのは，リポジトリの名前を[ username ].github.ioとすること． 空のリポジトリを作ったら
+$ git submodule add git@github.com:[ username ]/[ username ].
+        </div>
+          <a href="/posts/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+      </section>
+
+      
+
+      </div>
   
 
     </main>

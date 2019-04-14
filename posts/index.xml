@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>おなかすいた</title>
-    <link>https://actat.github.io/</link>
-    <description>Recent content on おなかすいた</description>
+    <title>Posts on おなかすいた</title>
+    <link>https://actat.github.io/posts/</link>
+    <description>Recent content in Posts on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 14 Apr 2019 21:59:04 +0900</lastBuildDate>
     
-	<atom:link href="https://actat.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://actat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
