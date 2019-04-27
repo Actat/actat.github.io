@@ -6,10 +6,19 @@
     <description>Recent content in Dynamics輪講 on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Apr 2019 21:23:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2019 21:53:28 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/tags/dynamics%E8%BC%AA%E8%AC%9B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【Dynamics輪講】NO.1 変位と速度と加速度</title>
+      <link>https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1-%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Tue, 16 Apr 2019 21:53:28 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1-%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/</guid>
+      <description>「時間は座標系には依存しない」という仮定をおく． 古典力学しかやらないので． 直交座標系\(OXYZ\)と点\(P\)を考え，位置ベクトル\(\vec{OP}\)を\(\boldsymbol{R}\)と表すことにする． ベクトル\(\boldsymbol{R}\)は時間変化する\(\boldsymbol{</description>
+    </item>
     
     <item>
       <title>【dynamics輪講】No.0 はじめます</title>
