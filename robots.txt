@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://actat.github.io/sitemap.xml
