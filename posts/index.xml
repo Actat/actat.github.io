@@ -13,10 +13,10 @@
     
     <item>
       <title>MathJaxを有効にして数式を表示しよう</title>
-      <link>https://actat.github.io/posts/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</link>
+      <link>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</link>
       <pubDate>Fri, 19 Apr 2019 22:56:03 +0900</pubDate>
       
-      <guid>https://actat.github.io/posts/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</guid>
+      <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</guid>
       <description>&lt;p&gt;数式を表示したいのでできるようにした．&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/formats/#mathjax-with-hugo&#34;&gt;ここ&lt;/a&gt;に書いてある通りに設定すればおしまい．
@@ -25,10 +25,10 @@
     
     <item>
       <title>要約をすっきりさせよう</title>
-      <link>https://actat.github.io/posts/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</link>
+      <link>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</link>
       <pubDate>Tue, 16 Apr 2019 22:40:56 +0900</pubDate>
       
-      <guid>https://actat.github.io/posts/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</guid>
+      <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</guid>
       <description>&lt;h2 id=&#34;なんかダサくない&#34;&gt;なんかダサくない？&lt;/h2&gt;
 
 &lt;p&gt;post一覧をのぞくと各postの冒頭が見える…はずなのですが，長さ不揃いだし，片方めっちゃ長いじゃん．
@@ -60,10 +60,10 @@
     
     <item>
       <title>HugoとGitHub Pagesでブログ的なものをはじめよう</title>
-      <link>https://actat.github.io/posts/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</link>
+      <link>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</link>
       <pubDate>Sun, 14 Apr 2019 21:59:04 +0900</pubDate>
       
-      <guid>https://actat.github.io/posts/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</guid>
+      <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</guid>
       <description>abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒</description>
     </item>
     
