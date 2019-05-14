@@ -6,10 +6,19 @@
     <description>Recent content in Posts on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 22:56:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 19:28:00 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inventorからきれいな図を作る</title>
+      <link>https://actat.github.io/posts/inventor%E3%81%8B%E3%82%89%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B/</link>
+      <pubDate>Tue, 14 May 2019 19:28:00 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/inventor%E3%81%8B%E3%82%89%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B/</guid>
+      <description>発表資料や論文でCADの画面をきれいに取り出せたら便利な時ってありますよね． Inventorから使いやすい図を生成する方法を模索した結果をまとめておきます． だいたいこんな感じの図ができます． Inventorの設定 まず最初に背景色を単色にします． ツールリボンからアプリケーションオプションを開き，「色」</description>
+    </item>
     
     <item>
       <title>バ美肉簡単にできちゃった</title>
