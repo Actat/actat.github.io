@@ -6,10 +6,19 @@
     <description>Recent content in Dynamics輪講 on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Apr 2019 21:53:28 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 23:02:40 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/tags/dynamics%E8%BC%AA%E8%AC%9B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【Dynamics輪講】No.2 回転の変位と速度</title>
+      <link>https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Sat, 27 Apr 2019 23:02:40 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/</guid>
+      <description>前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標</description>
+    </item>
     
     <item>
       <title>【Dynamics輪講】NO.1 変位と速度と加速度</title>
