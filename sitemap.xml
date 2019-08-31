@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://actat.github.io/posts/pixel%E3%82%92mtp%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A8%E3%81%97%E3%81%A6windows%E3%81%AEpc%E3%81%AB%E8%AA%8D%E8%AD%98%E3%81%95%E3%81%9B%E3%82%8B/</loc>
+    <lastmod>2019-08-31T16:28:39+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/100%E5%9D%87%E3%81%AE%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83%E3%81%A8%E3%82%AE%E3%82%A2%E3%81%A8%E6%85%A3%E6%80%A7%E8%83%BD%E7%8E%87/</loc>
     <lastmod>2019-05-20T20:04:49+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -121,7 +128,7 @@
   
   <url>
     <loc>https://actat.github.io/posts/</loc>
-    <lastmod>2019-05-20T20:04:49+09:00</lastmod>
+    <lastmod>2019-08-31T16:28:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -142,7 +149,7 @@
   
   <url>
     <loc>https://actat.github.io/</loc>
-    <lastmod>2019-05-20T20:04:49+09:00</lastmod>
+    <lastmod>2019-08-31T16:28:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
