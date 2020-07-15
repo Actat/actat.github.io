@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>おなかすいた  | 個人ボーナスのレベルの選び方</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.40.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="個人ボーナスのレベルの選び方" />
+<meta property="og:description" content="個人ボーナスのシステム上，名声の街道に表示される個人名声ポイントは非線形性を持つ函数を通った後の数字になる． ボーダーの予想やボーナスレベルの選択といった操作には個人名声ポイントの素点を用いる必要がある． 具体的な計算方法を説明する． 個人ボーナスとは ルールに個人ボーナスという項目がある． 個人ボーナス プレ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actat.github.io/posts/%E5%80%8B%E4%BA%BA%E3%83%9C%E3%83%BC%E3%83%8A%E3%82%B9%E3%81%AE%E3%83%AC%E3%83%99%E3%83%AB%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9/" />
+
+
+
+<meta property="article:published_time" content="2020-07-15T17:44:31&#43;09:00"/>
+
+<meta property="article:modified_time" content="2020-07-15T17:44:31&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="個人ボーナスのレベルの選び方">
+<meta itemprop="description" content="個人ボーナスのシステム上，名声の街道に表示される個人名声ポイントは非線形性を持つ函数を通った後の数字になる． ボーダーの予想やボーナスレベルの選択といった操作には個人名声ポイントの素点を用いる必要がある． 具体的な計算方法を説明する． 個人ボーナスとは ルールに個人ボーナスという項目がある． 個人ボーナス プレ">
+
+
+<meta itemprop="datePublished" content="2020-07-15T17:44:31&#43;09:00" />
+<meta itemprop="dateModified" content="2020-07-15T17:44:31&#43;09:00" />
+<meta itemprop="wordCount" content="3541">
+
+
+
+<meta itemprop="keywords" content="WoT," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="個人ボーナスのレベルの選び方"/>
+<meta name="twitter:description" content="個人ボーナスのシステム上，名声の街道に表示される個人名声ポイントは非線形性を持つ函数を通った後の数字になる． ボーダーの予想やボーナスレベルの選択といった操作には個人名声ポイントの素点を用いる必要がある． 具体的な計算方法を説明する． 個人ボーナスとは ルールに個人ボーナスという項目がある． 個人ボーナス プレ"/>
+
+      
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-140153146-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      おなかすいた
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-140153146-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-140153146-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">個人ボーナスのレベルの選び方</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-15T17:44:31&#43;09:00">July 15, 2020</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>個人ボーナスのシステム上，名声の街道に表示される個人名声ポイントは非線形性を持つ函数を通った後の数字になる．
+ボーダーの予想やボーナスレベルの選択といった操作には個人名声ポイントの素点を用いる必要がある．
+具体的な計算方法を説明する．</p>
+
+<h1 id="個人ボーナスとは">個人ボーナスとは</h1>
+
+<p><a href="https://worldoftanks.asia/ja/content/docs/metal-wars-regulations/">ルール</a>に個人ボーナスという項目がある．</p>
+
+<blockquote>
+<p>個人ボーナス</p>
+
+<p>プレイヤーは個人名声ポイントを個人ボーナスに変換して、個人名声ポイントの獲得量を上げることができます。各ボーナスの効果は入手直後から有効です。</p>
+
+<p>個人名声ポイントは計画的に使いましょう。名声ポイントを運用して、名声ポンと獲得量を増やすこともできますし、イベントランク上位に入ることも夢ではありません。逆に、計算を誤れば期待した順位よりも下位になってしまうかもしれません。</p>
+</blockquote>
+
+<p>具体的な運用の内容はクライアント内でグローバルマップの公開から凍結までの期間だけ確認できた．
+<del>（全部ルールに書いてくれ．）</del></p>
+
+<p>運用の内容を簡単に説明すると，既に得た個人名声ポイントを支払うと名声ポイントの計算式のBonus_pに上乗せができ，それ以降の戦闘で得られる名声ポイントが増加する仕組みになっている．
+支払う価格と上乗せされる倍率は決まっており，購入する順番も決まっている．
+便宜上初期状態をレベル0として，購入を進めるたびにレベル1，レベル2と呼ぶことにする．
+メタル・ウォーズにおける各レベルの購入価格と購入後のBonus_pの数値は以下の表のとおりだった．
+例えば，個人名声ポイントを10支払ってレベル1にした場合，次以降の戦闘で得る個人名声ポイントは5%のおまけがつく．</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">レベル</th>
+<th align="right">価格</th>
+<th align="right">ボーナス</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="right">0</td>
+<td align="right">0%</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="right">10</td>
+<td align="right">5%</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="right">50</td>
+<td align="right">10%</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="right">250</td>
+<td align="right">20%</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="right">1000</td>
+<td align="right">40%</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="right">2500</td>
+<td align="right">60%</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="right">5000</td>
+<td align="right">90%</td>
+</tr>
+
+<tr>
+<td align="center">7</td>
+<td align="right">20000</td>
+<td align="right">120%</td>
+</tr>
+
+<tr>
+<td align="center">8</td>
+<td align="right">30000</td>
+<td align="right">160%</td>
+</tr>
+
+<tr>
+<td align="center">9</td>
+<td align="right">40000</td>
+<td align="right">200%</td>
+</tr>
+
+<tr>
+<td align="center">10</td>
+<td align="right">50000</td>
+<td align="right">240%</td>
+</tr>
+</tbody>
+</table>
+
+<p>以上が個人ボーナスの全容だ．</p>
+
+<h1 id="購入可能になり次第購入すべき">購入可能になり次第購入すべき</h1>
+
+<p>レベルを上げるなら可能な限り早く上げるほうが得をする．
+レベルが上がった状態のほうが多くポイントがもらえるからだ．</p>
+
+<p>最終的にレベルを1にあげる予定の場合を考え，30回の戦闘に出て1回の戦闘で10ポイントの素点を獲得したとする．
+全体で得られる個人名声ポイントの素点は300ポイントになる．</p>
+
+<p>最善なのは1戦終わった直後にレベル1を購入するパターンだ．
+この場合，1戦終わった段階で10ポイントだった名声ポイントが一度0に戻り，残りの29戦でサイド個人名声ポイントを貯めなおすことになる．
+レベル1にしてあるので1戦あたり10.5ポイントが得られ，最終的に名声の街道では304.5ポイントとなる．
+（名声の街道では小数点以下が表示されないが，小数点以下の取り扱いはルールで明言されていない．<del>全部ルールに書いてくれ．</del>）</p>
+
+<p>2戦目が終わった直後にレベル2を購入した場合，2戦終わった直後20ポイントだった名声ポイントが10に戻り，残りの28戦をボーナスのかかった状態で戦うことになる．
+最終的な名声の街道上でのポイントは304になり，1戦分の0.5ポイント損することになる．</p>
+
+<h1 id="最適レベルの切り替わり点">最適レベルの切り替わり点</h1>
+
+<p>上で次のレベルが購入可能になったら即座に購入すべきことを説明した．
+ここからは（実際にはぴったりの名声ポイントになることはないが）購入可能になるのと同時に購入する理想的な状況を仮定する．</p>
+
+<p>レベル0の時とレベル1の時は収入が5%違うので，素点で200ポイント稼ぐと支払った10ポイントが回収されてトントンになる．
+素点が200点になるまではレベル0のほうがポイントが高く，素点が200点を超えるとレベル1のほうがポイントが高くなる．</p>
+
+<p>レベル1のときとレベル2のときでトントンになる位置を求める．
+レベル2の購入には50ポイント必要で，レベル2はレベル1に比べて5%のボーナスが追加で得られる．
+購入に使った50ポイントを回収するには素点で1000点必要だ．
+素点で1000点を得た時には名声の街道上では1100点になっているはずである．</p>
+
+<p>ところで，レベル1からレベル2に上げられるようになるのはレベル1になった後に名声の街道上で50ポイントが貯まったタイミングである．
+レベル1の状態で50ポイント入手するのに必要な素点は47.6ポイントである．
+レベル1に上げるために必要な素点である10ポイントを合わせてレベル1とレベル2でトントンになる時の素点は1057.6ポイントだとわかる．</p>
+
+<p>ここまででわかったことをまとめると素点が0点から210点でCWEが終わる見込みの人はレベル1で止めるべきで，素点が210点から1057.6点でCWEが終わる見込みの人はレベル2で止めるのが良い．
+同様の計算を順番に行うと各レベルが最適になる素点の範囲がわかる．
+計算した結果を表にまとめておく．</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">レベル</th>
+<th align="center">最適になる素点</th>
+<th align="center">名声の街道上でのポイント</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0 ~ 210</td>
+<td align="center">0 ~ 210</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="center">210 ~ 1058</td>
+<td align="center">210 ~ 1100</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">1058 ~ 2785</td>
+<td align="center">1100 ~ 3000</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">2785 ~ 6118</td>
+<td align="center">3000 ~ 7000</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="center">6118 ~ 15404</td>
+<td align="center">7000 ~ 20000</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="center">15404 ~ 22696</td>
+<td align="center">20000 ~ 31667</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="center">22696 ~ 83222</td>
+<td align="center">31667 ~ 146667</td>
+</tr>
+
+<tr>
+<td align="center">7</td>
+<td align="center">83222 ~ 105192</td>
+<td align="center">146667 ~ 195000</td>
+</tr>
+
+<tr>
+<td align="center">8</td>
+<td align="center">105192 ~ 145576</td>
+<td align="center">195000 ~ 300000</td>
+</tr>
+
+<tr>
+<td align="center">9</td>
+<td align="center">145576 ~ 187243</td>
+<td align="center">300000 ~ 425000</td>
+</tr>
+
+<tr>
+<td align="center">10</td>
+<td align="center">187243 ~</td>
+<td align="center">425000 ~</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="ボーダーの予想">ボーダーの予想</h1>
+
+<p>今回のボーダーを大雑把に予想して，車両を取らせる人は全員レベル6にするべきとの結論を出した．
+その計算方法を説明する．</p>
+
+<p>前回の工業の夜明けでの自分の結果がレベル5で26982ポイントで1485位だった．
+これまでの計算結果を使うと素点が20000ポイントの時レベル5だと27355ポイントで前回の自分の結果より少し良い程度になる．
+今回のボーダーである1175位になるためには11日間で20000ポイントを超えるペースで名声ポイントを稼ぐ必要があることがわかる．
+メタル・ウォーズは期間が14日間なので雑に計算しても14/11倍の25454ポイントの素点を取らなければボーダーに乗らないと予想できる．
+先ほどの表を確認すると素点が25454ポイントの時はレベル6が最適で，計算すれば名声の街道上で36909ポイントとわかる．</p>
+
+<p>最近ボーダーがどんどん上がっていく傾向にあるらしいとはいえさすがに14万を超えることはないので車両を取る人はレベル6で確定と他の運営陣に伝えて事前のボーダー予想は終了した．
+期間中は日々1175位のポイントの増え方を眺めていただけで難しいことはしていない．</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>名声の街道上で見える個人名声ポイントはボーナスがかかった後でそのまま処理するのは難しい．
+そこで素点を逆算して処理すると比較的妥当な推論ができる．
+ルールを見て少し考えればわかることなので誰でも知っていると思うがわからない人もいるようだったので丁寧に計算方法を説明した．</p>
+
+<h1 id="おまけ">おまけ</h1>
+
+<p>それが起こったのは2020年7月6日 メタル・ウォーズが始まって8日目の月曜日のことだった．
+18:30からの戦闘を終えてピック部屋に戻り，次の戦闘を確認すると18:45からの戦闘はなく次の戦闘は19:00からだった．
+20時台の領地のオークションの入札額の最終確認，次の戦闘の陣地と対戦相手の確認，さらにその次の戦闘の有無の確認を終えなければならかったが15分間の休みがもらえてほっとしたときDMの通知が届いた．</p>
+
+<p>このクソ忙しい時間帯にDMを送ってくるとは相当急ぎの要件があるに違いないと思って慌てて目を通した．
+「スプレッドシートの個人名声ポイントブーストで質問です。レベル6にブーストして同じ値になるのが31666っていうのはどうやって計算したか教えて欲しいです。レベル5だと1.6倍、レベル6だと1.9倍になるので、素のポイントが10だと、3ポイントの差がつき、そのポイント差が5000になるのが、16666になるのですが.....」</p>
+
+<p>疲れていた僕はとっくの昔に終わった仕事のことを考えるのをやめた．
+独立に計算した結果を他に2つ知っていて同じ結果になっていたので自分の計算が正しいことに自信があったから．
+19:00の戦闘にピックされ，タクの確認を済ませた後，戦闘開始までの間に読み直したときボーナス分の1.9倍が抜けていることに気づいた．
+忙しいときに既に終わっている仕事を無意味にほじくり返される徒労感，始まって既に1週間以上経過しているタイミングに選ぶ作業がそれという時代遅れ感のうえに素のポイントという概念を持ちながら素でないポイントに換算する作業をできない頭の悪さも重なって絶望的な気持ちになった．</p>
+
+<p>戦闘が終わって待機部屋に戻った僕は最大限気を使っても「それは素のポイントだからボーナスかけたらわかると思うので自分で考えてほしい．考えてもわからなかったらもう一度連絡をくれ．」と言うのが精一杯だった．
+10分ほどして「すみません、理解しました。」とだけ連絡がきたので彼は謝罪ができて理解力もある素晴らしい人だということでこの話は終末をむかえたのだった．
+めでたしめでたし．</p>
+
+<p>ピックされなくて暇だったのはわかっている．
+どうしてピックされないのか自分の行いを振り返れば良い反省ができただろうに惜しいことをするなと思った．
+だって彼は理解力があって自分の非を認めることもできるのだから．</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/wot" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">WoT</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%82%92%E7%B5%82%E3%81%88%E3%81%A6/">CWEメタル・ウォーズを終えて</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/cwe%E3%81%AB%E5%88%9D%E5%8F%82%E5%8A%A0%E3%81%99%E3%82%8B%E4%BA%BA%E3%81%B8%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E8%AA%AC%E6%98%8E/">CWEに初参加する人への簡単な説明</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://actat.github.io/" >
+    &copy; 2020 おなかすいた
+  </a>
+    <div>
+
+
+
+<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+</div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
