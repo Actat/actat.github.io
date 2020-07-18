@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://actat.github.io/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E6%B0%97%E6%8C%81%E3%81%A1/</loc>
+    <lastmod>2020-07-17T22:11:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/%E5%80%8B%E4%BA%BA%E3%83%9C%E3%83%BC%E3%83%8A%E3%82%B9%E3%81%AE%E3%83%AC%E3%83%99%E3%83%AB%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9/</loc>
     <lastmod>2020-07-15T17:44:31+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,7 +177,7 @@
   
   <url>
     <loc>https://actat.github.io/posts/</loc>
-    <lastmod>2020-07-15T17:44:31+09:00</lastmod>
+    <lastmod>2020-07-17T22:11:05+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -191,14 +198,14 @@
   
   <url>
     <loc>https://actat.github.io/tags/wot/</loc>
-    <lastmod>2020-07-15T17:44:31+09:00</lastmod>
+    <lastmod>2020-07-17T22:11:05+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://actat.github.io/</loc>
-    <lastmod>2020-07-15T17:44:31+09:00</lastmod>
+    <lastmod>2020-07-17T22:11:05+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
