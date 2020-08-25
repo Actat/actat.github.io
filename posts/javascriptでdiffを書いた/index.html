@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>おなかすいた </title>
+    <title>おなかすいた  | JavaScriptでdiffを書いた</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,34 +27,54 @@
     
 
     
-      <link href="https://actat.github.io/index.xml" rel="alternate" type="application/rss+xml" title="おなかすいた" />
-      <link href="https://actat.github.io/index.xml" rel="feed" type="application/rss+xml" title="おなかすいた" />
-    
 
-    <meta property="og:title" content="おなかすいた" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://actat.github.io/" />
+    <meta property="og:title" content="JavaScriptでdiffを書いた" />
+<meta property="og:description" content="必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
 
-
-
-<meta property="og:updated_time" content="2020-08-26T00:11:49&#43;09:00"/>
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" />
 
 
 
+<meta property="article:published_time" content="2020-08-26T00:11:49&#43;09:00"/>
 
-
+<meta property="article:modified_time" content="2020-08-26T00:11:49&#43;09:00"/>
 
 
 
 
 
-<meta itemprop="name" content="おなかすいた">
-<meta itemprop="description" content="">
 
+
+
+
+
+
+<meta itemprop="name" content="JavaScriptでdiffを書いた">
+<meta itemprop="description" content="必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
+
+">
+
+
+<meta itemprop="datePublished" content="2020-08-26T00:11:49&#43;09:00" />
+<meta itemprop="dateModified" content="2020-08-26T00:11:49&#43;09:00" />
+<meta itemprop="wordCount" content="0">
+
+
+
+<meta itemprop="keywords" content="つくったもの," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="おなかすいた"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="JavaScriptでdiffを書いた"/>
+<meta name="twitter:description" content="必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
+
+"/>
 
       
 <script>
@@ -70,11 +90,11 @@ ga('send', 'pageview');
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://actat.github.io/images/mt_fuji.JPG');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -134,12 +154,6 @@ ga('send', 'pageview');
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          おなかすいた
-        </h1>
-        
-      </div>
     </div>
     
 <script>
@@ -163,129 +177,228 @@ ga('send', 'pageview');
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
-  </article>
   
-  
-  
-  
-  
-  
-  
-    
-    
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">JavaScriptでdiffを書いた</h1>
       
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
+      <time class="f6 mv4 dib tracked" datetime="2020-08-26T00:11:49&#43;09:00">August 26, 2020</time>      
+      
+      
+    </header>
 
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" class="color-inherit dim link">
-            JavaScriptでdiffを書いた
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>必要になったのでJavaScriptでdiffを書いた．
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
 編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．</p>
 
 <p></p>
-        </div>
-          <a href="/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
 
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AB%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%88%A6%E3%82%92%E3%81%97%E3%81%9F%E8%A9%B1/" class="color-inherit dim link">
-            久しぶりにランダム戦をした話
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>CWEが終わって久しぶりにランダム戦をしている話．</p>
+<h1 id="できあがったもの">できあがったもの</h1>
 
-<p></p>
-        </div>
-          <a href="/posts/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AB%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%88%A6%E3%82%92%E3%81%97%E3%81%9F%E8%A9%B1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
 
-          </div>
-        
-      </section>
+<head>
+    <meta charset="utf-8">
+    <title>differ</title>
+</head>
+<body>
+    <form name="frm">
+        元のテキスト<br>
+        <textarea name="prev" rows="10"></textarea><br>
+        変更後のテキスト<br>
+        <textarea name="curr" rows="10"></textarea><br>
+    </form>
+    <input type="submit" id="btn" value="実行">
+    <div id="result"></div>
+</body>
+<script>
+    function differ() {
+        var prev = document.frm.prev.value;
+        var curr = document.frm.curr.value;
+        var div = document.getElementById('result');
+        var result = onp(prev, curr);
+        div.innerHTML = formatDiff(prev, curr, result);
+    }
 
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E3%81%91%E3%82%8B%E3%82%88%E3%81%AD/" class="link black dim">
-              グラフ描けるよね
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E6%B0%97%E6%8C%81%E3%81%A1/" class="link black dim">
-              CWEメタル・ウォーズの気持ち
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/%E5%80%8B%E4%BA%BA%E3%83%9C%E3%83%BC%E3%83%8A%E3%82%B9%E3%81%AE%E3%83%AC%E3%83%99%E3%83%AB%E3%81%AE%E9%81%B8%E3%81%B3%E6%96%B9/" class="link black dim">
-              個人ボーナスのレベルの選び方
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%82%92%E7%B5%82%E3%81%88%E3%81%A6/" class="link black dim">
-              CWEメタル・ウォーズを終えて
-            </a>
-          </h2>
-        
+    function formatDiff(prev, curr, result) {
+        var index = [0, 0]; // [prev, curr]
+        var string = "distance: " + result[0] + "<br>" + "\n";
 
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
-        
-        </section>
-      
+        for (var i = 0; i < result[1].length; i++) {
+            if (index[1] < result[1][i][1]) {
+                string += ' +';
+                while (index[1] < result[1][i][1]) {
+                    string += curr[index[1]];
+                    index[1]++;
+                }
+                string += ' ';
+            }
+            if (index[0] < result[1][i][0]) {
+                string += ' -';
+                while (index[0] < result[1][i][0]) {
+                    string += prev[index[0]];
+                    index[0]++;
+                }
+                string += ' ';
+            }
+            string += prev[result[1][i][0]];
+            index[0]++;
+            index[1]++;
+        }
+        if (index[1] < curr.length) {
+            string += ' +';
+            while (index[1] < curr.length) {
+                string += curr[index[1]];
+                index[1]++;
+            }
+            string += ' ';
+        }
+        if (index[0] < prev.length) {
+            string += ' -';
+            while (index[0] < prev.length) {
+                string += prev[index[0]];
+                index[0]++;
+            }
+            string += ' ';
+        }
+        return string;
+    }
 
-      </div>
+    function onp(A, B) {
+        var N = A.length;
+        var M = B.length;
+
+        // N >= M が前提
+        if (N < M) {
+            var result = onp(B, A);
+            for (var i = 0; i < result[1].length; i++) {
+                var tmp = result[1][i][0];
+                result[1][i][0] = result[1][i][1];
+                result[1][i][1] = tmp;
+            }
+            return result;
+        }
+
+        var delta = N - M;
+        var fp = []; // -M <= k <= N が 1 <= index <= N + M + 1 に対応 (index 0 と N + M + 2 は探索時にはみ出る両端)
+        var offset = M + 1;
+        for (var i = 0; i < M + N + 3; i++) {
+            fp.push([-1, []]);
+        }
+        fp[0 + offset][0] = 0;
+
+        for (var p = 0;; p++) {
+            // p(削除の回数)を増やしながら探索する
+            for (var k = -p; k < delta; k++) {
+                var tmp;
+                if (fp[k - 1 + offset][0] + 1 > fp[k + 1 + offset][0]) {
+                    tmp = fp[k - 1 + offset].concat();
+                    tmp[0]++;
+                } else {
+                    tmp = fp[k + 1 + offset].concat();
+                }
+                var result = goDiagonally(A, B, k, tmp[0]);
+                fp[k + offset][0] = result[0];
+                fp[k + offset][1] = tmp[1].concat(result[1]);
+            }
+            for (var k = p + delta; k > delta; k--) {
+                var tmp;
+                if (fp[k - 1 + offset][0] + 1 > fp[k + 1 + offset][0]) {
+                    tmp = fp[k - 1 + offset].concat();
+                    tmp[0]++;
+                } else {
+                    tmp = fp[k + 1 + offset].concat();
+                }
+                var result = goDiagonally(A, B, k, tmp[0]);
+                fp[k + offset][0] = result[0];
+                fp[k + offset][1] = tmp[1].concat(result[1]);
+            }
+            {
+                var tmp
+                if (fp[delta - 1 + offset][0] + 1 > fp[delta + 1 + offset][0]) {
+                    tmp = fp[delta - 1 + offset].concat();
+                    tmp[0]++;
+                } else {
+                    tmp = fp[delta + 1 + offset].concat();
+                }
+                var result = goDiagonally(A, B, k, tmp[0]);
+                fp[delta + offset][0] = result[0];
+                fp[delta + offset][1] = tmp[1].concat(result[1]);
+            }
+            if (fp[delta + offset][0] == N) {
+                return [delta + 2 * p, fp[delta + offset][1]];
+            }
+        }
+    }
+
+    function goDiagonally(A, B, k, y) {
+        var x = y - k;
+        var common = [];
+        if (y < A.length && x < B.length) {
+        }
+        while (y < A.length && x < B.length && A[y] == B[x]) {
+            common.push([y, x]);
+            x++;
+            y++;
+        }
+        return [y, common];
+    }
+    
+    document.getElementById('btn').addEventListener("click", differ);
+</script>
+
+
+<h1 id="学んだこと">学んだこと</h1>
+
+<ul>
+<li>編集距離とはどれくらい変化しているかを表したもの</li>
+<li>SESは編集距離が最短になる書き換えの方法</li>
+<li>LCSは一番長い共通部分のこと</li>
+<li>編集距離を求める時にSESがわかり，SESがわかればLCSもわかる</li>
+<li>2つのテキストを縦軸と横軸に置いたエディットグラフを考えると削除や追加の処理が縦横の移動になり，書き換えない部分は斜めの移動になる
+
+<ul>
+<li>経路探索の問題に落とし込める</li>
+</ul></li>
+<li>Wuのアルゴリズムでは遠回りをしない部分からだんだんと探索する領域を広げることで効率よく探索を行う</li>
+<li>適当に再帰で探索を書いたらとても遅かったので，良いアルゴリズムを使うと良いと思った</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li>[1] Sun Wu, Udi Manber, Gene Myers and Webb Miller, &quot;An O(NP) sequence comparison algorithm,&quot; Information Processing Letters, Volume 35, Issue 6, pp. 317-323, 1990, <a href="https://doi.org/10.1016/0020-0190(90)90035-V">doi: 10.1016/0020-0190(90)90035-V</a>.</li>
+<li>[2] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ①仕組み、考え方,&quot; <a href="https://qiita.com/convto/items/e05d8147d9808a27b8ff">https://qiita.com/convto/items/e05d8147d9808a27b8ff</a>, 2020年8月26日閲覧.</li>
+<li>[3] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ②探索方法,&quot; <a href="https://qiita.com/convto/items/8faf530d304024a22769">https://qiita.com/convto/items/8faf530d304024a22769</a>, 2020年8月26日閲覧.</li>
+<li>[4] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ③Goによる実装,&quot; <a href="https://qiita.com/convto/items/39efea78e23a944d0760">https://qiita.com/convto/items/39efea78e23a944d0760</a>, 2020年8月26日閲覧.</li>
+<li>[5] 久保達彦, &quot;diffの動作原理を知る～どのようにして差分を導き出すのか,&quot; <a href="https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1">https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1</a>, 2020年8月26日閲覧.</li>
+</ul><ul class="pa0">
   
+   <li class="list">
+     <a href="/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">つくったもの</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

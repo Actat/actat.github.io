@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</loc>
+    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AB%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%88%A6%E3%82%92%E3%81%97%E3%81%9F%E8%A9%B1/</loc>
     <lastmod>2020-07-29T00:38:06+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -191,7 +198,7 @@
   
   <url>
     <loc>https://actat.github.io/posts/</loc>
-    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
+    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -219,7 +226,14 @@
   
   <url>
     <loc>https://actat.github.io/</loc>
-    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
+    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE/</loc>
+    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

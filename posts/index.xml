@@ -6,10 +6,23 @@
     <description>Recent content in Posts on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2020 00:38:06 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 00:11:49 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScriptでdiffを書いた</title>
+      <link>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</link>
+      <pubDate>Wed, 26 Aug 2020 00:11:49 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</guid>
+      <description>&lt;p&gt;必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>久しぶりにランダム戦をした話</title>
