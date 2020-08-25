@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>おなかすいた </title>
+    <title>おなかすいた  | Hugoの記事にHTMLを埋め込もう</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,34 +27,57 @@
     
 
     
-      <link href="https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="alternate" type="application/rss+xml" title="おなかすいた" />
-      <link href="https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="feed" type="application/rss+xml" title="おなかすいた" />
-    
 
-    <meta property="og:title" content="環境構築" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/" />
+    <meta property="og:title" content="Hugoの記事にHTMLを埋め込もう" />
+<meta property="og:description" content="Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
+できないというよりそういう使い方をしないものだ．
 
+実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，JavaScriptでdiffを書いたときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．
 
-
-<meta property="og:updated_time" content="2020-08-26T00:52:28&#43;09:00"/>
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%ABhtml%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%82%E3%81%86/" />
 
 
 
+<meta property="article:published_time" content="2020-08-26T00:52:28&#43;09:00"/>
 
-
-
+<meta property="article:modified_time" content="2020-08-26T00:52:28&#43;09:00"/>
 
 
 
 
-<meta itemprop="name" content="環境構築">
-<meta itemprop="description" content="">
 
+
+
+
+
+
+
+<meta itemprop="name" content="Hugoの記事にHTMLを埋め込もう">
+<meta itemprop="description" content="Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
+できないというよりそういう使い方をしないものだ．
+
+実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，JavaScriptでdiffを書いたときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．
+
+">
+
+
+<meta itemprop="datePublished" content="2020-08-26T00:52:28&#43;09:00" />
+<meta itemprop="dateModified" content="2020-08-26T00:52:28&#43;09:00" />
+<meta itemprop="wordCount" content="0">
+
+
+
+<meta itemprop="keywords" content="hugo,環境構築," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="環境構築"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Hugoの記事にHTMLを埋め込もう"/>
+<meta name="twitter:description" content="Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
+できないというよりそういう使い方をしないものだ．
+
+実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，JavaScriptでdiffを書いたときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．
+
+"/>
 
       
 <script>
@@ -70,11 +93,11 @@ ga('send', 'pageview');
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://actat.github.io/images/mt_fuji.JPG');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -134,12 +157,6 @@ ga('send', 'pageview');
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          環境構築
-        </h1>
-        
-      </div>
     </div>
     
 <script>
@@ -163,119 +180,108 @@ ga('send', 'pageview');
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “環境構築”</p>
-    </div>
-  </article>
-  <div class="mw8 center">    
-    <section class="flex-ns flex-wrap justify-around mt5">
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Hugoの記事にHTMLを埋め込もう</h1>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%ABhtml%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%82%E3%81%86/" class="link black dim">
-        Hugoの記事にHTMLを埋め込もう
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
+      <time class="f6 mv4 dib tracked" datetime="2020-08-26T00:52:28&#43;09:00">August 26, 2020</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
 できないというよりそういう使い方をしないものだ．</p>
 
 <p>実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，<a href="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/">JavaScriptでdiffを書いた</a>ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．</p>
 
 <p></p>
-    </div>
-  </div>
-</div>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/" class="link black dim">
-        MathJaxを有効にして数式を表示しようリターンズ
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      前回数式を表示できるように設定したはずだったのだが，これを書き始めたところ早速うまくいかなかったので続編が決定．おめでとうございます． 問題点 式中に下付き文字のアンダーバーが2つ以上あるとマークダウンの強調として解釈されてしまう場合があり，数式として処理されない．（マークダウンの強調として解釈されずに
-    </div>
-  </div>
-</div>
+<h1 id="やりたかったこと">やりたかったこと</h1>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/" class="link black dim">
-        MathJaxを有効にして数式を表示しよう
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>数式を表示したいのでできるようにした．</p>
+<p>Hugoの気の利いた機能を働かせない無法地帯を作りたい．</p>
 
-<p><a href="https://gohugo.io/content-management/formats/#mathjax-with-hugo">ここ</a>に書いてある通りに設定すればおしまい．
-</p>
-    </div>
-  </div>
-</div>
+<h1 id="やったこと">やったこと</h1>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/" class="link black dim">
-        要約をすっきりさせよう
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <h2 id="なんかダサくない">なんかダサくない？</h2>
+<p><a href="https://srbrnote.work/archives/2772">こちら</a>に従い，ショートコードを設定してHTMLをそのまま表示するようにした．</p>
 
-<p>post一覧をのぞくと各postの冒頭が見える…はずなのですが，長さ不揃いだし，片方めっちゃ長いじゃん．
-<img src="./長い要約.png" alt="要約がめちゃくちゃ長いの図" /></p>
+<p>まず，ブログのディレクトリの下で<code>layout/shortcodes/rawhtml.html</code>を作成し，次の内容を書き込んで保存した．</p>
 
-<p>google先生に聞いたところ<a href="https://hugo.nakaken88.com/master/summaries/">この記事</a>が見つかりました．
-あなたは神ですか．</p>
+<pre><code>{{ .Inner }}
+</code></pre>
 
-<p></p>
-    </div>
-  </div>
-</div>
+<p>記事のマークダウンファイルの中でショートコードを呼び出してHTMLを生のままで表示してもらうようにする．
+具体的には下のようにする．</p>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/" class="link black dim">
-        HugoとGitHub Pagesでブログ的なものをはじめよう
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒
-    </div>
-  </div>
-</div>
+<pre><code>{\{&lt; rawhtml &gt;}\}
+&lt;body&gt;
+    &lt;form&gt;
+    &lt;!-- formの中身 --&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    &lt;!-- JavaScriptのコード --&gt;
+&lt;/script&gt;
+{\{&lt; /rawhtml &gt;}\}
+</code></pre>
 
-        </div>
-      
+<p>今この場でショートコードが働かないように<code>{\{</code>や<code>}\}</code>のように書いたが，本来は<code>{{</code>や<code>}}</code>だ．</p>
+
+<p>これだけでHTMLを埋め込めた．</p><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/hugo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hugo</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">環境構築</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
     </section>
-  </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/">MathJaxを有効にして数式を表示しようリターンズ</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/">要約をすっきりさせよう</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/">HugoとGitHub Pagesでブログ的なものをはじめよう</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/">MathJaxを有効にして数式を表示しよう</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
