@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>おなかすいた </title>
+    <title>おなかすいた  | RaspberryPiのセットアップ</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,19 +27,17 @@
     
 
     
-      <link href="https://actat.github.io/index.xml" rel="alternate" type="application/rss+xml" title="おなかすいた" />
-      <link href="https://actat.github.io/index.xml" rel="feed" type="application/rss+xml" title="おなかすいた" />
-    
 
-    <meta property="og:title" content="おなかすいた" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://actat.github.io/" />
+    <meta property="og:title" content="RaspberryPiのセットアップ" />
+<meta property="og:description" content="Raspberry Piをセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる． OSはRaspberry Pi Imagerでraspbianをインストールする． 手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない． Raspberry Pi Imagerのダウン" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actat.github.io/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/" />
 
 
 
-<meta property="og:updated_time" content="2020-08-29T23:33:40&#43;09:00"/>
+<meta property="article:published_time" content="2020-08-29T23:33:40&#43;09:00"/>
 
+<meta property="article:modified_time" content="2020-08-29T23:33:40&#43;09:00"/>
 
 
 
@@ -49,12 +47,22 @@
 
 
 
-<meta itemprop="name" content="おなかすいた">
-<meta itemprop="description" content="">
 
+
+<meta itemprop="name" content="RaspberryPiのセットアップ">
+<meta itemprop="description" content="Raspberry Piをセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる． OSはRaspberry Pi Imagerでraspbianをインストールする． 手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない． Raspberry Pi Imagerのダウン">
+
+
+<meta itemprop="datePublished" content="2020-08-29T23:33:40&#43;09:00" />
+<meta itemprop="dateModified" content="2020-08-29T23:33:40&#43;09:00" />
+<meta itemprop="wordCount" content="1388">
+
+
+
+<meta itemprop="keywords" content="RaspberryPi,環境構築,tips," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="おなかすいた"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="RaspberryPiのセットアップ"/>
+<meta name="twitter:description" content="Raspberry Piをセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる． OSはRaspberry Pi Imagerでraspbianをインストールする． 手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない． Raspberry Pi Imagerのダウン"/>
 
       
 <script>
@@ -70,11 +78,11 @@ ga('send', 'pageview');
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://actat.github.io/images/mt_fuji.JPG');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -134,12 +142,6 @@ ga('send', 'pageview');
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          おなかすいた
-        </h1>
-        
-      </div>
     </div>
     
 <script>
@@ -163,128 +165,202 @@ ga('send', 'pageview');
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">RaspberryPiのセットアップ</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-08-29T23:33:40&#43;09:00">August 29, 2020</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Raspberry Piをセットアップする手順を書き残しておく．
+ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる．
+OSはRaspberry Pi Imagerでraspbianをインストールする．
+手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない．</p>
+
+<h1 id="raspberry-pi-imagerのダウンロード">Raspberry Pi Imagerのダウンロード</h1>
+
+<p>公式のダウンロードページ（<a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>）でSDカードへの書き込みツールであるRaspberry Pi Imagerが配布されている．
+Windowsではexeファイルがダウンロードできるので実行してインストール．
+終わるまで気長に待つのみ．</p>
+
+<h1 id="sdカードへの書き込み">SDカードへの書き込み</h1>
+
+<p>Raspberry Pi Imagerを起動する．
+OSはRASPBERRY PI OS (32-BIT)を選択し，SDカードを指定してWRITEボタンをクリック．
+SDカードの中身が消えても大丈夫なものか確認してYESをクリックして書き込み開始．
+書き込みが終わるとSDカードのマウントが解除されるので物理的に一度抜き差ししてからSSHの有効化に進む．</p>
+
+<h1 id="ssh有効化">SSH有効化</h1>
+
+<p>SDカードのルートに<code>ssh</code>という空ファイルを作成する．
+Raspberry Pi ImagerがSDカードをアンマウントしているかもしれないので注意する．</p>
+
+<p>WSLを用いる場合は，エクスプローラでSDカードのドライブレター（<code>E:</code>とか）を確認した後，適当なディレクトリを作って</p>
+
+<pre><code>$ sudo mount -t drvfs E: tmp
+</code></pre>
+
+<p>でマウントし</p>
+
+<pre><code>$ sudo umount tmp
+</code></pre>
+
+<p>でアンマウントする．</p>
+
+<h1 id="ssh">SSH</h1>
+
+<p>SDカードをさし，raspiをルータに接続．電源を投入して起動を待ってから接続を試みる．
+パスワードは<code>raspberry</code>．</p>
+
+<pre><code>$ ssh pi@raspberrypi.local
+</code></pre>
+
+<p>複数のRaspberryPiのセットアップを続けていると</p>
+
+<pre><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</code></pre>
+
+<p>が出てくるかもしれない．</p>
+
+<pre><code>$ ssh-keygen -R raspberrypi.local
+</code></pre>
+
+<p>でホストの鍵を削除すれば接続できる．</p>
+
+<p>SSHできない場合はここまでの手順か環境に問題がある．</p>
+
+<pre><code>$ nslookup raspberrypi.local
+</code></pre>
+
+<p>を試してIPがわからないなら環境の問題なので，ルータの設定画面を見るとかnmapを使うとか何らかの方法でIPを突き止めればSSHできる．</p>
+
+<p>IPがわかっているのにSSHできないならこれまでの手順の問題なので落ち着いて確認する．</p>
+
+<ul>
+<li>ユーザ名<code>pi</code>とパスワード<code>raspberry</code>を勘違いしていないか</li>
+<li>電源は入っているか，起動しているか</li>
+<li>空ファイル<code>SSH</code>ができているか</li>
+</ul>
+
+<h1 id="ipの固定">IPの固定</h1>
+
+<p><code>/etc/dhcpcd.conf</code>の<code># Example static IP configuration:</code>の部分を編集する．</p>
+
+<ul>
+<li>interface</li>
+<li>static ip_address</li>
+<li>static routers</li>
+</ul>
+
+<h1 id="guiの無効化">GUIの無効化</h1>
+
+<pre><code>$ sudo raspi-config
+</code></pre>
+
+<p>から<code>Boot Options</code> -&gt; <code>Desktop / CLI</code>と進み，<code>console</code>にする．最後に再起動される</p>
+
+<h1 id="piユーザの名前を変更">piユーザの名前を変更</h1>
+
+<p>デフォルトではユーザ名がpiでパスワードはraspberryだと誰もが知っているのでそのままにしてはいけない．
+tmpユーザを一度追加してpiからactatへユーザ名を変更し，パスワードを設定する．</p>
+
+<pre><code>$ sudo useradd -M tmp
+$ sudo gpasswd -a tmp sudo
+$ sudo passwd tmp
+</code></pre>
+
+<p>ログアウトしてtmpでSSHしなおす</p>
+
+<pre><code>$ sudo usermod -l actat pi
+$ sudo usermod -d /home/actat -m actat
+$ sudo groupmod -n actat pi
+$ sudo passwd actat
+</code></pre>
+
+<p>ログアウトしてactatでSSHしなおす</p>
+
+<pre><code>$ sudo userdel tmp
+$ sudo vi /etc/ssh/sshd_config
+    &quot;PermitRootLogin no&quot;にして&quot;AllowUsers actat&quot;を追記する．
+$ sudo systemctl reload ssh
+</code></pre>
+
+<h1 id="おしまい">おしまい</h1>
+
+<p>Raspberry Pi Imagerがとても便利．
+windowsではそのままだとddできないので面倒な手順を踏んでいたが，これ一つインストールするだけで解決するのでとても捗る．</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/raspberrypi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">RaspberryPi</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">環境構築</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/tips" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tips</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%ABhtml%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%82%E3%81%86/">Hugoの記事にHTMLを埋め込もう</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/inventor%E3%81%8B%E3%82%89%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B/">Inventorからきれいな図を作る</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/">MathJaxを有効にして数式を表示しようリターンズ</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/">MathJaxを有効にして数式を表示しよう</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/">要約をすっきりさせよう</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/">HugoとGitHub Pagesでブログ的なものをはじめよう</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
   </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/" class="color-inherit dim link">
-            RaspberryPiのセットアップ
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Raspberry Piをセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる． OSはRaspberry Pi Imagerでraspbianをインストールする． 手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない． Raspberry Pi Imagerのダウン
-        </div>
-          <a href="/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%ABhtml%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%82%E3%81%86/" class="color-inherit dim link">
-            Hugoの記事にHTMLを埋め込もう
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
-できないというよりそういう使い方をしないものだ．</p>
-
-<p>実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，<a href="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/">JavaScriptでdiffを書いた</a>ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．</p>
-
-<p></p>
-        </div>
-          <a href="/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%ABhtml%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%82%E3%81%86/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" class="link black dim">
-              JavaScriptでdiffを書いた
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AB%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%88%A6%E3%82%92%E3%81%97%E3%81%9F%E8%A9%B1/" class="link black dim">
-              久しぶりにランダム戦をした話
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E3%81%91%E3%82%8B%E3%82%88%E3%81%AD/" class="link black dim">
-              グラフ描けるよね
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E6%B0%97%E6%8C%81%E3%81%A1/" class="link black dim">
-              CWEメタル・ウォーズの気持ち
-            </a>
-          </h2>
-        
-
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
-        
-        </section>
-      
-
-      </div>
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

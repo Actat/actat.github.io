@@ -6,10 +6,19 @@
     <description>Recent content in 環境構築 on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Aug 2020 00:52:28 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 23:33:40 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RaspberryPiのセットアップ</title>
+      <link>https://actat.github.io/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/</link>
+      <pubDate>Sat, 29 Aug 2020 23:33:40 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/</guid>
+      <description>Raspberry Piをセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なのでSSHで全てを済ませる． OSはRaspberry Pi Imagerでraspbianをインストールする． 手元のRaspberry Pi 2 Model Bをセットアップしながら書いているのでWi-Fi周りの情報はない． Raspberry Pi Imagerのダウン</description>
+    </item>
     
     <item>
       <title>Hugoの記事にHTMLを埋め込もう</title>
