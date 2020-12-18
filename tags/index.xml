@@ -6,10 +6,28 @@
     <description>Recent content in Tags on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2020 23:33:40 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2020 21:26:29 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WoT</title>
+      <link>https://actat.github.io/tags/wot/</link>
+      <pubDate>Fri, 18 Dec 2020 21:26:29 +0900</pubDate>
+      
+      <guid>https://actat.github.io/tags/wot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ゲーム</title>
+      <link>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</link>
+      <pubDate>Fri, 18 Dec 2020 21:26:29 +0900</pubDate>
+      
+      <guid>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>RaspberryPi</title>
@@ -53,24 +71,6 @@
       <pubDate>Wed, 26 Aug 2020 00:11:49 +0900</pubDate>
       
       <guid>https://actat.github.io/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WoT</title>
-      <link>https://actat.github.io/tags/wot/</link>
-      <pubDate>Wed, 29 Jul 2020 00:38:06 +0900</pubDate>
-      
-      <guid>https://actat.github.io/tags/wot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ゲーム</title>
-      <link>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</link>
-      <pubDate>Wed, 29 Jul 2020 00:38:06 +0900</pubDate>
-      
-      <guid>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</guid>
       <description></description>
     </item>
     
