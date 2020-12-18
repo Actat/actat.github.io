@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>つくったもの on おなかすいた</title>
@@ -19,9 +19,7 @@
       <guid>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</guid>
       <description>&lt;p&gt;必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．&lt;/p&gt;</description>
     </item>
     
   </channel>

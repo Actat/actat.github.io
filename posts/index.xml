@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on おなかすいた</title>
@@ -29,9 +29,7 @@
       <description>&lt;p&gt;Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
 できないというよりそういう使い方をしないものだ．&lt;/p&gt;
 
-&lt;p&gt;実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，&lt;a href=&#34;https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/&#34;&gt;JavaScriptでdiffを書いた&lt;/a&gt;ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，&lt;a href=&#34;https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/&#34;&gt;JavaScriptでdiffを書いた&lt;/a&gt;ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,9 +40,7 @@
       <guid>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</guid>
       <description>&lt;p&gt;必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,9 +49,7 @@
       <pubDate>Wed, 29 Jul 2020 00:38:06 +0900</pubDate>
       
       <guid>https://actat.github.io/posts/%E4%B9%85%E3%81%97%E3%81%B6%E3%82%8A%E3%81%AB%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%88%A6%E3%82%92%E3%81%97%E3%81%9F%E8%A9%B1/</guid>
-      <description>&lt;p&gt;CWEが終わって久しぶりにランダム戦をしている話．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;CWEが終わって久しぶりにランダム戦をしている話．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,9 +58,7 @@
       <pubDate>Mon, 27 Jul 2020 19:05:29 +0900</pubDate>
       
       <guid>https://actat.github.io/posts/%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E3%81%91%E3%82%8B%E3%82%88%E3%81%AD/</guid>
-      <description>&lt;p&gt;手書きでグラフ描くことありますよね．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;手書きでグラフ描くことありますよね．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,9 +67,7 @@
       <pubDate>Fri, 17 Jul 2020 22:11:05 +0900</pubDate>
       
       <guid>https://actat.github.io/posts/cwe%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BA%E3%81%AE%E6%B0%97%E6%8C%81%E3%81%A1/</guid>
-      <description>&lt;p&gt;おきもちをひょうめいしろしろといわれるので．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;おきもちをひょうめいしろしろといわれるので．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -116,9 +106,7 @@
       <description>&lt;p&gt;Beat SaberはVRリズムゲームで，有志が作成したScoreSaberという仕組みでプレイヤーの腕前をPerformance Point(pp)として測定，比較できます．
 ScoreSaberのGlobal Rankingの全体のppの分布を調べました．
 人口の分布は富士山型でなだらかでした．
-様々な難易度のランク譜面があり，その難易度の変化は連続的だと読み解きました．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+様々な難易度のランク譜面があり，その難易度の変化は連続的だと読み解きました．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -137,8 +125,7 @@ ScoreSaberのGlobal Rankingの全体のppの分布を調べました．
       
       <guid>https://actat.github.io/posts/pixel%E3%82%92mtp%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A8%E3%81%97%E3%81%A6windows%E3%81%AEpc%E3%81%AB%E8%AA%8D%E8%AD%98%E3%81%95%E3%81%9B%E3%82%8B/</guid>
       <description>&lt;p&gt;携帯電話を変えて，pixelを使い始めました．
-PCとファイルをやり取りするためにMTP接続をしたかったのですが，うまく認識してもらえず苦労したので正解を残しておきます．
-&lt;/p&gt;</description>
+PCとファイルをやり取りするためにMTP接続をしたかったのですが，うまく認識してもらえず苦労したので正解を残しておきます．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -166,8 +153,7 @@ PCとファイルをやり取りするためにMTP接続をしたかったので
       
       <guid>https://actat.github.io/posts/%E3%83%90%E7%BE%8E%E8%82%89%E7%B0%A1%E5%8D%98%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%A1%E3%82%83%E3%81%A3%E3%81%9F/</guid>
       <description>&lt;p&gt;今日はここ１か月くらい拘束されていたお仕事が終わっていい気分だったのです……
-出来心で手を出したらすんなりバ美肉できてしまったという話を書きます．
-&lt;/p&gt;</description>
+出来心で手を出したらすんなりバ美肉できてしまったという話を書きます．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -195,9 +181,7 @@ PCとファイルをやり取りするためにMTP接続をしたかったので
       
       <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</guid>
       <description>&lt;p&gt;数式を表示したいのでできるようにした．&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/formats/#mathjax-with-hugo&#34;&gt;ここ&lt;/a&gt;に書いてある通りに設定すればおしまい．
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/formats/#mathjax-with-hugo&#34;&gt;ここ&lt;/a&gt;に書いてある通りに設定すればおしまい．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -207,14 +191,10 @@ PCとファイルをやり取りするためにMTP接続をしたかったので
       
       <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</guid>
       <description>&lt;h2 id=&#34;なんかダサくない&#34;&gt;なんかダサくない？&lt;/h2&gt;
-
 &lt;p&gt;post一覧をのぞくと各postの冒頭が見える…はずなのですが，長さ不揃いだし，片方めっちゃ長いじゃん．
-&lt;img src=&#34;./長い要約.png&#34; alt=&#34;要約がめちゃくちゃ長いの図&#34; /&gt;&lt;/p&gt;
-
+&lt;img src=&#34;./%E9%95%B7%E3%81%84%E8%A6%81%E7%B4%84.png&#34; alt=&#34;要約がめちゃくちゃ長いの図&#34;&gt;&lt;/p&gt;
 &lt;p&gt;google先生に聞いたところ&lt;a href=&#34;https://hugo.nakaken88.com/master/summaries/&#34;&gt;この記事&lt;/a&gt;が見つかりました．
-あなたは神ですか．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+あなたは神ですか．&lt;/p&gt;</description>
     </item>
     
     <item>

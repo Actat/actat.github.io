@@ -1,10 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://actat.github.io/posts/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/raspberrypi/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/raspberrypi%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97/</loc>
     <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/tips/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</loc>
+    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/hugo/</loc>
+    <lastmod>2020-08-26T00:52:28+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -19,6 +68,27 @@
   <url>
     <loc>https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/</loc>
     <lastmod>2020-08-26T00:11:49+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE/</loc>
+    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/wot/</loc>
+    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</loc>
+    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -66,8 +136,22 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/tags/beat-saber/</loc>
+    <lastmod>2020-04-11T10:49:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/beatsaber%E3%81%AE%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E3%81%AE%E5%88%86%E5%B8%83/</loc>
     <lastmod>2020-04-11T10:49:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2019-12-21T15:04:35+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,7 +178,21 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/tags/%E6%89%8B%E3%81%8C%E6%BB%91%E3%81%A3%E3%81%9F/</loc>
+    <lastmod>2019-05-20T20:04:49+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/inventor%E3%81%8B%E3%82%89%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B/</loc>
+    <lastmod>2019-05-14T19:28:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/%E5%9B%B3/</loc>
     <lastmod>2019-05-14T19:28:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -108,6 +206,13 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/tags/dynamics%E8%BC%AA%E8%AC%9B/</loc>
+    <lastmod>2019-04-27T23:02:40+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/</loc>
     <lastmod>2019-04-27T23:02:40+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -115,7 +220,21 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/tags/mathjax/</loc>
+    <lastmod>2019-04-27T15:54:19+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%BA/</loc>
+    <lastmod>2019-04-27T15:54:19+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://actat.github.io/tags/mmark/</loc>
     <lastmod>2019-04-27T15:54:19+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -150,6 +269,13 @@
   </url>
   
   <url>
+    <loc>https://actat.github.io/tags/githubpages/</loc>
+    <lastmod>2019-04-14T21:59:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/</loc>
     <lastmod>2019-04-14T21:59:04+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -163,135 +289,9 @@
   </url>
   
   <url>
-    <loc>https://actat.github.io/tags/beat-saber/</loc>
-    <lastmod>2020-04-11T10:49:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://actat.github.io/categories/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/dynamics%E8%BC%AA%E8%AC%9B/</loc>
-    <lastmod>2019-04-27T23:02:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/githubpages/</loc>
-    <lastmod>2019-04-14T21:59:04+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/hugo/</loc>
-    <lastmod>2020-08-26T00:52:28+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/mathjax/</loc>
-    <lastmod>2019-04-27T15:54:19+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/mmark/</loc>
-    <lastmod>2019-04-27T15:54:19+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/posts/</loc>
-    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/raspberrypi/</loc>
-    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/</loc>
-    <lastmod>2020-04-11T10:49:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/tips/</loc>
-    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/wot/</loc>
-    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/</loc>
-    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE/</loc>
-    <lastmod>2020-08-26T00:11:49+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</loc>
-    <lastmod>2020-07-29T00:38:06+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E5%9B%B3/</loc>
-    <lastmod>2019-05-14T19:28:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E6%89%8B%E3%81%8C%E6%BB%91%E3%81%A3%E3%81%9F/</loc>
-    <lastmod>2019-05-20T20:04:49+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2019-12-21T15:04:35+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://actat.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</loc>
-    <lastmod>2020-08-29T23:33:40+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

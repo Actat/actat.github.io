@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on おなかすいた</title>
+    <title>hugo on おなかすいた</title>
     <link>https://actat.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on おなかすいた</description>
+    <description>Recent content in hugo on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Aug 2020 00:52:28 +0900</lastBuildDate>
@@ -20,9 +20,7 @@
       <description>&lt;p&gt;Hugoはマークダウンで書けばあとはいい感じにしてくれるのでとても助かる一方で，HTMLをいじるようなことは普通はできない．
 できないというよりそういう使い方をしないものだ．&lt;/p&gt;
 
-&lt;p&gt;実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，&lt;a href=&#34;https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/&#34;&gt;JavaScriptでdiffを書いた&lt;/a&gt;ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;実はHTMLタグを書いておけばいい感じに反映してもらえるらしいのだが，&lt;a href=&#34;https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/&#34;&gt;JavaScriptでdiffを書いた&lt;/a&gt;ときにformタグをいい感じにしてもらえなかったので，HTMLを書けるようにした．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,14 +39,10 @@
       
       <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/%E8%A6%81%E7%B4%84%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%95%E3%81%9B%E3%82%88%E3%81%86/</guid>
       <description>&lt;h2 id=&#34;なんかダサくない&#34;&gt;なんかダサくない？&lt;/h2&gt;
-
 &lt;p&gt;post一覧をのぞくと各postの冒頭が見える…はずなのですが，長さ不揃いだし，片方めっちゃ長いじゃん．
-&lt;img src=&#34;./長い要約.png&#34; alt=&#34;要約がめちゃくちゃ長いの図&#34; /&gt;&lt;/p&gt;
-
+&lt;img src=&#34;./%E9%95%B7%E3%81%84%E8%A6%81%E7%B4%84.png&#34; alt=&#34;要約がめちゃくちゃ長いの図&#34;&gt;&lt;/p&gt;
 &lt;p&gt;google先生に聞いたところ&lt;a href=&#34;https://hugo.nakaken88.com/master/summaries/&#34;&gt;この記事&lt;/a&gt;が見つかりました．
-あなたは神ですか．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+あなたは神ですか．&lt;/p&gt;</description>
     </item>
     
     <item>

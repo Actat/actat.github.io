@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mathjax on おなかすいた</title>
+    <title>mathjax on おなかすいた</title>
     <link>https://actat.github.io/tags/mathjax/</link>
-    <description>Recent content in Mathjax on おなかすいた</description>
+    <description>Recent content in mathjax on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 27 Apr 2019 15:54:19 +0900</lastBuildDate>
@@ -27,9 +27,7 @@
       
       <guid>https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/mathjax%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%97%E3%81%A6%E6%95%B0%E5%BC%8F%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%82%88%E3%81%86/</guid>
       <description>&lt;p&gt;数式を表示したいのでできるようにした．&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/formats/#mathjax-with-hugo&#34;&gt;ここ&lt;/a&gt;に書いてある通りに設定すればおしまい．
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/formats/#mathjax-with-hugo&#34;&gt;ここ&lt;/a&gt;に書いてある通りに設定すればおしまい．&lt;/p&gt;</description>
     </item>
     
   </channel>

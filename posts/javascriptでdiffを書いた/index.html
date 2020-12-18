@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -31,58 +31,38 @@
     <meta property="og:title" content="JavaScriptでdiffを書いた" />
 <meta property="og:description" content="必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
-
-" />
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" />
-
-
-
-<meta property="article:published_time" content="2020-08-26T00:11:49&#43;09:00"/>
-
-<meta property="article:modified_time" content="2020-08-26T00:11:49&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2020-08-26T00:11:49+09:00" />
+<meta property="article:modified_time" content="2020-08-26T00:11:49+09:00" />
 <meta itemprop="name" content="JavaScriptでdiffを書いた">
 <meta itemprop="description" content="必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
-
-">
-
-
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．">
 <meta itemprop="datePublished" content="2020-08-26T00:11:49&#43;09:00" />
 <meta itemprop="dateModified" content="2020-08-26T00:11:49&#43;09:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="947">
 
 
 
-<meta itemprop="keywords" content="つくったもの," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="つくったもの," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JavaScriptでdiffを書いた"/>
 <meta name="twitter:description" content="必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．
-
-"/>
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．"/>
 
       
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-140153146-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-140153146-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
     
   </head>
@@ -156,23 +136,30 @@ ga('send', 'pageview');
 
     </div>
     
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-140153146-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140153146-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-140153146-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-140153146-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
   </header>
 
@@ -198,8 +185,6 @@ ga('send', 'pageview');
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
 編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．</p>
-
-<p></p>
 
 <h1 id="できあがったもの">できあがったもの</h1>
 

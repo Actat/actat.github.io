@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beat Saber on おなかすいた</title>
@@ -20,9 +20,7 @@
       <description>&lt;p&gt;Beat SaberはVRリズムゲームで，有志が作成したScoreSaberという仕組みでプレイヤーの腕前をPerformance Point(pp)として測定，比較できます．
 ScoreSaberのGlobal Rankingの全体のppの分布を調べました．
 人口の分布は富士山型でなだらかでした．
-様々な難易度のランク譜面があり，その難易度の変化は連続的だと読み解きました．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+様々な難易度のランク譜面があり，その難易度の変化は連続的だと読み解きました．&lt;/p&gt;</description>
     </item>
     
   </channel>
