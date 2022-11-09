@@ -6,10 +6,22 @@
     <description>Recent content on おなかすいた</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Aug 2022 15:47:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 07 Aug 2022 21:22:30 +0900</lastBuildDate>
     
 	<atom:link href="https://actat.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GoogleAnalytics4対応</title>
+      <link>https://actat.github.io/posts/googleanalytics4%E5%AF%BE%E5%BF%9C/</link>
+      <pubDate>Sun, 07 Aug 2022 21:22:30 +0900</pubDate>
+      
+      <guid>https://actat.github.io/posts/googleanalytics4%E5%AF%BE%E5%BF%9C/</guid>
+      <description>&lt;p&gt;久しぶりに Google アナリティクスを見たら，これまでのユニバーサルアナリティクスは 2023 年 7 月 1 日以降使用できなくなるため，
+Google アナリティクス 4 プロパティに切り替えるようにという通知が出てきた．
+別にアナリティクスを見ているわけでもないのでなくなっても構わないのだが，
+せっかくだから移行作業をしてみることにした．&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CWE鋼の時代を終えて</title>
