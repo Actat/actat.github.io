@@ -46,7 +46,7 @@ https://github.com/Actat/riccati_solver" />
 https://github.com/Actat/riccati_solver">
 <meta itemprop="datePublished" content="2022-11-09T19:21:17&#43;09:00" />
 <meta itemprop="dateModified" content="2022-11-09T19:21:17&#43;09:00" />
-<meta itemprop="wordCount" content="1665">
+<meta itemprop="wordCount" content="1919">
 
 
 
@@ -231,7 +231,7 @@ J = \int(\boldsymbol{x}^T(t)\boldsymbol{Q}\boldsymbol{x}(t) + \boldsymbol{u}^T(t
 \]</span></p>
 
 <p>が最小になることが知られています．
-この\(\boldsymbol{Q}\)と\(\boldsymbol{R}\)は対角行列で，積分の前半は誤差の大きさ，後半は制御入力の大きさに当たります．
+この\(\boldsymbol{Q}\)と\(\boldsymbol{R}\)は対角行列で，誤差の大きさと制御入力の大きさを重視する度合いを決めるパラメータです．
 \(J\)を小さくするのは，小さな入力ですばやく目標の状態へもっていくことに対応しており，\(J\)が最小になる\(\boldsymbol{K}\)を採用すると都合が良いです．</p>
 
 <p>そこで，\(J\)が最小になる\(\boldsymbol{K}\)を返す関数<code>LQR(A, B, Q, R)</code>を用意して事前に\(\boldsymbol{K}\)を計算しておきます．
@@ -245,7 +245,7 @@ J = \int(\boldsymbol{x}^T(t)\boldsymbol{Q}\boldsymbol{x}(t) + \boldsymbol{u}^T(t
 以下に解を得る手段を書いておきますが，証明は理解していません．</p>
 
 <p>状態変数の数を n とします．
-ハミルトン行列\(\boldsymbol{H}\)（2n 次元の正方行列）を</p>
+ハミルトン行列\(\boldsymbol{H}\)（2n 行 2n 列の正方行列）を</p>
 
 <p><span  class="math">\[
 \boldsymbol{H} =
@@ -265,7 +265,43 @@ J = \int(\boldsymbol{x}^T(t)\boldsymbol{Q}\boldsymbol{x}(t) + \boldsymbol{u}^T(t
 
 <p>言語は C++で Eigen を用いました．
 <a href="https://github.com/Actat/riccati_solver">https://github.com/Actat/riccati_solver</a>に置いてあります．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;eigen3/Eigen/Eigenvalues&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;eigen3/Eigen/Geometry&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+Eigen<span style="color:#f92672">::</span>MatrixXd riccati_solver(Eigen<span style="color:#f92672">::</span>MatrixXd A,
+                               Eigen<span style="color:#f92672">::</span>MatrixXd B,
+                               Eigen<span style="color:#f92672">::</span>MatrixXd Q,
+                               Eigen<span style="color:#f92672">::</span>MatrixXd R) {
+  <span style="color:#66d9ef">int</span> <span style="color:#66d9ef">const</span> n <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>)A.cols();
+  <span style="color:#66d9ef">auto</span> H      <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>MatrixXd(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> n, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> n);
+  H <span style="color:#f92672">&lt;&lt;</span> A, <span style="color:#f92672">-</span>B <span style="color:#f92672">*</span> R.inverse() <span style="color:#f92672">*</span> B.transpose(), <span style="color:#f92672">-</span>Q, <span style="color:#f92672">-</span>A.transpose();
 
+  Eigen<span style="color:#f92672">::</span>EigenSolver<span style="color:#f92672">&lt;</span>Eigen<span style="color:#f92672">::</span>MatrixXd<span style="color:#f92672">&gt;</span> s(H);
+
+  <span style="color:#66d9ef">int</span> j   <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">auto</span> S1 <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>MatrixXcd(n, n);
+  <span style="color:#66d9ef">auto</span> S2 <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>MatrixXcd(n, n);
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> n; i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (s.eigenvalues()[i].real() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+      S1.col(j) <span style="color:#f92672">=</span> s.eigenvectors().block(<span style="color:#ae81ff">0</span>, i, n, <span style="color:#ae81ff">1</span>);
+      S2.col(j) <span style="color:#f92672">=</span> s.eigenvectors().block(n, i, n, <span style="color:#ae81ff">1</span>);
+      j<span style="color:#f92672">++</span>;
+    }
+  }
+
+  <span style="color:#66d9ef">auto</span> P <span style="color:#f92672">=</span> S2 <span style="color:#f92672">*</span> S1.inverse();
+
+  <span style="color:#66d9ef">return</span> P.real();
+}
+
+Eigen<span style="color:#f92672">::</span>MatrixXd lqr(Eigen<span style="color:#f92672">::</span>MatrixXd A,
+                    Eigen<span style="color:#f92672">::</span>MatrixXd B,
+                    Eigen<span style="color:#f92672">::</span>MatrixXd Q,
+                    Eigen<span style="color:#f92672">::</span>MatrixXd R) {
+  <span style="color:#66d9ef">auto</span> P <span style="color:#f92672">=</span> riccati_solver(A, B, Q, R);
+  <span style="color:#66d9ef">return</span> R.inverse() <span style="color:#f92672">*</span> B.transpose() <span style="color:#f92672">*</span> P;
+}
+</code></pre></div>
 <p>LQR の実行例が<a href="https://www.maizuru-ct.ac.jp/control/kawata/study/book3/matlab/chap08/doc/sec841.html">インターネットにあった</a>ので，
 同じ入力を入れて同じ解が得られることを確認しました．</p>
 
@@ -280,7 +316,13 @@ J = \int(\boldsymbol{x}^T(t)\boldsymbol{Q}\boldsymbol{x}(t) + \boldsymbol{u}^T(t
 <ul>
 <li>[1] 豊橋技術科学大学・高等専門学校　制御工学教育連携プロジェクト, 専門基礎ライブラリー 制御工学 技術者のための，理論・設計から実装まで. 実教出版株式会社, 2012. <a href="https://www.jikkyo.co.jp/book/detail/122387">実教出版のページ</a>.</li>
 <li>[2] 山下 裕, 「ディジタル制御」(後半). <a href="https://stlab.ssi.ist.hokudai.ac.jp/~yuhyama/lecture/digital/digi-part2.pdf">https://stlab.ssi.ist.hokudai.ac.jp/~yuhyama/lecture/digital/digi-part2.pdf</a>, 2022 年 11 月 9 日閲覧.</li>
-</ul><ul class="pa0">
+</ul>
+
+<p>【2023 年 5 月 2 日追記】
+本来 Riccati 方程式を満たす\(\boldsymbol{P}\)の成分は実数になりますが，
+ハミルトン行列の固有値や固有ベクトルには複素数が出てきます．
+この部分の取り扱いに失敗しており，条件によっては nan を返す不具合が見つかりました．
+修正済みです．</p><ul class="pa0">
   
 </ul>
 <div class="mt6">
