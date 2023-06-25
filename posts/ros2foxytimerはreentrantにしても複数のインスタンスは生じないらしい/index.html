@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>おなかすいた </title>
+    <title>おなかすいた  | 【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,19 +27,33 @@
     
 
     
-      <link href="https://actat.github.io/index.xml" rel="alternate" type="application/rss+xml" title="おなかすいた" />
-      <link href="https://actat.github.io/index.xml" rel="feed" type="application/rss+xml" title="おなかすいた" />
-    
 
-    <meta property="og:title" content="おなかすいた" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://actat.github.io/" />
-<meta property="og:updated_time" content="2023-06-25T13:50:31+09:00" />
-<meta itemprop="name" content="おなかすいた">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="おなかすいた"/>
-<meta name="twitter:description" content=""/>
+    <meta property="og:title" content="【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい" />
+<meta property="og:description" content="ROS 2 のexecutorの一種であるMultiThreadedExecutorは，複数のスレッドを用いて処理をパラレルに進めてくれます．
+同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
+Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると説明されています．
+しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actat.github.io/posts/ros2foxytimer%E3%81%AFreentrant%E3%81%AB%E3%81%97%E3%81%A6%E3%82%82%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%AF%E7%94%9F%E3%81%98%E3%81%AA%E3%81%84%E3%82%89%E3%81%97%E3%81%84/" />
+<meta property="article:published_time" content="2023-06-25T13:50:31+09:00" />
+<meta property="article:modified_time" content="2023-06-25T13:50:31+09:00" />
+<meta itemprop="name" content="【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい">
+<meta itemprop="description" content="ROS 2 のexecutorの一種であるMultiThreadedExecutorは，複数のスレッドを用いて処理をパラレルに進めてくれます．
+同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
+Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると説明されています．
+しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．">
+<meta itemprop="datePublished" content="2023-06-25T13:50:31&#43;09:00" />
+<meta itemprop="dateModified" content="2023-06-25T13:50:31&#43;09:00" />
+<meta itemprop="wordCount" content="784">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい"/>
+<meta name="twitter:description" content="ROS 2 のexecutorの一種であるMultiThreadedExecutorは，複数のスレッドを用いて処理をパラレルに進めてくれます．
+同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
+Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると説明されています．
+しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．"/>
 
       
 <script type="application/javascript">
@@ -59,11 +73,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://actat.github.io/images/mt_fuji.JPG');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -123,12 +137,6 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          おなかすいた
-        </h1>
-        
-      </div>
     </div>
     
 <script type="application/javascript">
@@ -159,128 +167,107 @@ if (!doNotTrack) {
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
-  </article>
   
-  
-  
-  
-  
-  
-  
-    
-    
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい</h1>
       
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
+      <time class="f6 mv4 dib tracked" datetime="2023-06-25T13:50:31&#43;09:00">June 25, 2023</time>      
+      
+      
+    </header>
 
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/ros2foxytimer%E3%81%AFreentrant%E3%81%AB%E3%81%97%E3%81%A6%E3%82%82%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%AF%E7%94%9F%E3%81%98%E3%81%AA%E3%81%84%E3%82%89%E3%81%97%E3%81%84/" class="color-inherit dim link">
-            【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>ROS 2 の<a href="https://docs.ros.org/en/foxy/Concepts/About-Executors.html">executor</a>の一種である<a href="https://docs.ros2.org/foxy/api/rclcpp/classrclcpp_1_1executors_1_1MultiThreadedExecutor.html">MultiThreadedExecutor</a>は，複数のスレッドを用いて処理をパラレルに進めてくれます．
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>ROS 2 の<a href="https://docs.ros.org/en/foxy/Concepts/About-Executors.html">executor</a>の一種である<a href="https://docs.ros2.org/foxy/api/rclcpp/classrclcpp_1_1executors_1_1MultiThreadedExecutor.html">MultiThreadedExecutor</a>は，複数のスレッドを用いて処理をパラレルに進めてくれます．
 同時に進めて良い処理や同時に進めると不都合な処理を<a href="https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html">callback group</a>を用いて設定します．
 Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると<a href="https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html#basics-of-callback-groups">説明されています</a>．
 しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．</p>
-        </div>
-          <a href="/posts/ros2foxytimer%E3%81%AFreentrant%E3%81%AB%E3%81%97%E3%81%A6%E3%82%82%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%AF%E7%94%9F%E3%81%98%E3%81%AA%E3%81%84%E3%82%89%E3%81%97%E3%81%84/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
 
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/%E4%B8%80%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%82%92%E7%9B%B4%E4%BA%A4%E3%81%99%E3%82%8B%E8%BB%B8%E3%81%A7%E3%81%AE%E4%BA%8C%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E5%88%86%E3%81%91%E3%82%8B/" class="color-inherit dim link">
-            一回の回転を直交する軸での二回の回転に分ける
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>一回の回転を直交する軸での二回の回転に分割する方法です．
-座標系の設定に使うために導出しました．
-C++による実装も公開しています．</p>
-        </div>
-          <a href="/posts/%E4%B8%80%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%82%92%E7%9B%B4%E4%BA%A4%E3%81%99%E3%82%8B%E8%BB%B8%E3%81%A7%E3%81%AE%E4%BA%8C%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E5%88%86%E3%81%91%E3%82%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
+<h2 id="実験">実験</h2>
 
-          </div>
-        
-      </section>
+<p>ノードを用意し，1000 ms ごとにコールバックを呼び出すように設定します．
+コールバック関数の中で 1500 ms のスリープを設定し，呼び出された時刻とスリープが終わった時刻を記録します．
+処理がパラレルに行われている場合，呼び出された時刻の記録は 1 秒おき，スリープが終わった時刻の記録も 1 秒おきになり，それぞれの間隔が 1.5 秒になるはずです．
+主要な部分を下に示します．
+全体は<a href="https://github.com/Actat/TimerReentrantTest">github</a>にあります．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestNode</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> rclcpp<span style="color:#f92672">::</span>Node {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  TestNode() <span style="color:#f92672">:</span> Node(<span style="color:#e6db74">&#34;test_node&#34;</span>) {
+    group_ <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+    group_ <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>create_callback_group(rclcpp<span style="color:#f92672">::</span>CallbackGroupType<span style="color:#f92672">::</span>Reentrant);
+    timer_ <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>create_wall_timer(std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>seconds(<span style="color:#ae81ff">1</span>),
+                                     std<span style="color:#f92672">::</span>bind(<span style="color:#f92672">&amp;</span>TestNode<span style="color:#f92672">::</span>cb, <span style="color:#66d9ef">this</span>), group_);
+  }
 
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/lqr%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F/" class="link black dim">
-              LQRが必要になったので実装した
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/googleanalytics4%E5%AF%BE%E5%BF%9C/" class="link black dim">
-              GoogleAnalytics4対応
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cwe%E9%8B%BC%E3%81%AE%E6%99%82%E4%BB%A3%E3%82%92%E7%B5%82%E3%81%88%E3%81%A6/" class="link black dim">
-              CWE鋼の時代を終えて
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cwe%E6%B1%BA%E6%88%A6%E3%81%AE%E5%88%BB%E3%82%92%E7%B5%82%E3%81%88%E3%81%A6/" class="link black dim">
-              CWE決戦の刻を終えて
-            </a>
-          </h2>
-        
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  rclcpp<span style="color:#f92672">::</span>TimerBase<span style="color:#f92672">::</span>SharedPtr timer_;
+  rclcpp<span style="color:#f92672">::</span>CallbackGroup<span style="color:#f92672">::</span>SharedPtr group_;
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cb</span>() {
+    <span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span> t0 <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>get_clock()<span style="color:#f92672">-&gt;</span>now();
+    rclcpp<span style="color:#f92672">::</span>sleep_for(std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>milliseconds(<span style="color:#ae81ff">1500</span>));
+    <span style="color:#66d9ef">auto</span> <span style="color:#66d9ef">const</span> t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>get_clock()<span style="color:#f92672">-&gt;</span>now();
+    RCLCPP_INFO(<span style="color:#66d9ef">this</span><span style="color:#f92672">-&gt;</span>get_logger(), <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">t0</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">%ld</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">%ld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">t1</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">%ld</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">%ld&#34;</span>,
+                (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span>)(t0.nanoseconds() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e-9</span>),
+                t0.nanoseconds() <span style="color:#f92672">%</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1e9</span>),
+                (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span>)(t1.nanoseconds() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e-9</span>),
+                t1.nanoseconds() <span style="color:#f92672">%</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1e9</span>));
+  }
+};
 
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
-        
-        </section>
-      
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv) {
+  rclcpp<span style="color:#f92672">::</span>init(argc, argv);
+  <span style="color:#66d9ef">auto</span> node <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>TestNode<span style="color:#f92672">&gt;</span>();
+  rclcpp<span style="color:#f92672">::</span>executors<span style="color:#f92672">::</span>MultiThreadedExecutor executor;
+  executor.add_node(node);
+  RCLCPP_INFO(node<span style="color:#f92672">-&gt;</span>get_logger(), <span style="color:#e6db74">&#34;num of threads: %d&#34;</span>,
+              executor.get_number_of_threads());
+  executor.spin();
+  rclcpp<span style="color:#f92672">::</span>shutdown();
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+<h2 id="結果と考察">結果と考察</h2>
 
-      </div>
+<p>実行すると以下の内容が表示されました．</p>
+<pre><code>[INFO] [1687669260.589471423] [test_node]: num of threads: 8
+[INFO] [1687669263.090033840] [test_node]:
+t0	1687669261	589953262
+t1	1687669263	90031766
+[INFO] [1687669264.590171461] [test_node]:
+t0	1687669263	90109498
+t1	1687669264	590169543
+[INFO] [1687669266.090309286] [test_node]:
+t0	1687669264	590247776
+t1	1687669266	90307447</code></pre>
+<p>コールバックの処理が終了した直後に次の呼び出しが行われており，パラレルな処理は行われていないことがわかります．
+最初の行によるとスレッド数は 8 で，十分な数のスレッドがあることが確認できます．</p>
+
+<h2 id="結論">結論</h2>
+
+<p>タイトルの通り，Timer は Reentrant にしても複数のインスタンスは生じないようです．
+1.5 秒かかる処理を 1 秒ごとに呼び出したいときには別の方法をとる必要がありそうです．</p><ul class="pa0">
   
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
