@@ -1,448 +1,167 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>おなかすいた  | JavaScriptでdiffを書いた</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
-
-    
-    
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
-    
-
-    
-
-    
-      
-    
-
-    
-
-    <meta property="og:title" content="JavaScriptでdiffを書いた" />
-<meta property="og:description" content="必要になったのでJavaScriptでdiffを書いた．
-軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/" />
-<meta property="article:published_time" content="2020-08-26T00:11:49+09:00" />
-<meta property="article:modified_time" content="2020-08-26T00:11:49+09:00" />
-<meta itemprop="name" content="JavaScriptでdiffを書いた">
-<meta itemprop="description" content="必要になったのでJavaScriptでdiffを書いた．
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>JavaScriptでdiffを書いた | おなかすいた</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
 編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．">
-<meta itemprop="datePublished" content="2020-08-26T00:11:49&#43;09:00" />
-<meta itemprop="dateModified" content="2020-08-26T00:11:49&#43;09:00" />
-<meta itemprop="wordCount" content="947">
-
-
-
-<meta itemprop="keywords" content="つくったもの," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JavaScriptでdiffを書いた"/>
-<meta name="twitter:description" content="必要になったのでJavaScriptでdiffを書いた．
+<meta name=generator content="Hugo 0.92.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="JavaScriptでdiffを書いた">
+<meta property="og:description" content="必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．"/>
-
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
-  </head>
-
-  <body class="ma0 avenir bg-near-white production">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
-      おなかすいた
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
-              Posts
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-08-26T00:11:49+09:00">
+<meta property="article:modified_time" content="2020-08-26T00:11:49+09:00">
+<meta itemprop=name content="JavaScriptでdiffを書いた">
+<meta itemprop=description content="必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．"><meta itemprop=datePublished content="2020-08-26T00:11:49+09:00">
+<meta itemprop=dateModified content="2020-08-26T00:11:49+09:00">
+<meta itemprop=wordCount content="952">
+<meta itemprop=keywords content="つくったもの,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="JavaScriptでdiffを書いた">
+<meta name=twitter:description content="必要になったのでJavaScriptでdiffを書いた．
+軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
+編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+おなかすいた
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/posts/ title="Posts page">
+Posts
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </nav>
-
-    </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">JavaScriptでdiffを書いた</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2020-08-26T00:11:49&#43;09:00">August 26, 2020</time>      
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>必要になったのでJavaScriptでdiffを書いた．
+</div>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/intent/tweet?url=https://actat.github.io/posts/javascript%E3%81%A7diff%E3%82%92%E6%9B%B8%E3%81%84%E3%81%9F/&text=JavaScript%e3%81%a7diff%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">JavaScriptでdiffを書いた</h1>
+<time class="f6 mv4 dib tracked" datetime=2020-08-26T00:11:49+09:00>August 26, 2020</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>必要になったのでJavaScriptでdiffを書いた．
 軽く調べたところWuのアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
 編集距離やSES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．</p>
-
-<h1 id="できあがったもの">できあがったもの</h1>
-
-
+<h1 id=できあがったもの>できあがったもの</h1>
 <head>
-    <meta charset="utf-8">
-    <title>differ</title>
+<meta charset=utf-8>
+<title>differ</title>
 </head>
 <body>
-    <form name="frm">
-        元のテキスト<br>
-        <textarea name="prev" rows="10"></textarea><br>
-        変更後のテキスト<br>
-        <textarea name="curr" rows="10"></textarea><br>
-    </form>
-    <input type="submit" id="btn" value="実行">
-    <div id="result"></div>
+<form name=frm>
+元のテキスト<br>
+<textarea name=prev rows=10></textarea><br>
+変更後のテキスト<br>
+<textarea name=curr rows=10></textarea><br>
+</form>
+<input type=submit id=btn value=実行>
+<div id=result></div>
 </body>
-<script>
-    function differ() {
-        var prev = document.frm.prev.value;
-        var curr = document.frm.curr.value;
-        var div = document.getElementById('result');
-        var result = onp(prev, curr);
-        div.innerHTML = formatDiff(prev, curr, result);
-    }
-
-    function formatDiff(prev, curr, result) {
-        var index = [0, 0]; // [prev, curr]
-        var string = "distance: " + result[0] + "<br>" + "\n";
-
-        for (var i = 0; i < result[1].length; i++) {
-            if (index[1] < result[1][i][1]) {
-                string += ' +';
-                while (index[1] < result[1][i][1]) {
-                    string += curr[index[1]];
-                    index[1]++;
-                }
-                string += ' ';
-            }
-            if (index[0] < result[1][i][0]) {
-                string += ' -';
-                while (index[0] < result[1][i][0]) {
-                    string += prev[index[0]];
-                    index[0]++;
-                }
-                string += ' ';
-            }
-            string += prev[result[1][i][0]];
-            index[0]++;
-            index[1]++;
-        }
-        if (index[1] < curr.length) {
-            string += ' +';
-            while (index[1] < curr.length) {
-                string += curr[index[1]];
-                index[1]++;
-            }
-            string += ' ';
-        }
-        if (index[0] < prev.length) {
-            string += ' -';
-            while (index[0] < prev.length) {
-                string += prev[index[0]];
-                index[0]++;
-            }
-            string += ' ';
-        }
-        return string;
-    }
-
-    function onp(A, B) {
-        var N = A.length;
-        var M = B.length;
-
-        // N >= M が前提
-        if (N < M) {
-            var result = onp(B, A);
-            for (var i = 0; i < result[1].length; i++) {
-                var tmp = result[1][i][0];
-                result[1][i][0] = result[1][i][1];
-                result[1][i][1] = tmp;
-            }
-            return result;
-        }
-
-        var delta = N - M;
-        var fp = []; // -M <= k <= N が 1 <= index <= N + M + 1 に対応 (index 0 と N + M + 2 は探索時にはみ出る両端)
-        var offset = M + 1;
-        for (var i = 0; i < M + N + 3; i++) {
-            fp.push([-1, []]);
-        }
-        fp[0 + offset][0] = 0;
-
-        for (var p = 0;; p++) {
-            // p(削除の回数)を増やしながら探索する
-            for (var k = -p; k < delta; k++) {
-                var tmp;
-                if (fp[k - 1 + offset][0] + 1 > fp[k + 1 + offset][0]) {
-                    tmp = fp[k - 1 + offset].concat();
-                    tmp[0]++;
-                } else {
-                    tmp = fp[k + 1 + offset].concat();
-                }
-                var result = goDiagonally(A, B, k, tmp[0]);
-                fp[k + offset][0] = result[0];
-                fp[k + offset][1] = tmp[1].concat(result[1]);
-            }
-            for (var k = p + delta; k > delta; k--) {
-                var tmp;
-                if (fp[k - 1 + offset][0] + 1 > fp[k + 1 + offset][0]) {
-                    tmp = fp[k - 1 + offset].concat();
-                    tmp[0]++;
-                } else {
-                    tmp = fp[k + 1 + offset].concat();
-                }
-                var result = goDiagonally(A, B, k, tmp[0]);
-                fp[k + offset][0] = result[0];
-                fp[k + offset][1] = tmp[1].concat(result[1]);
-            }
-            {
-                var tmp
-                if (fp[delta - 1 + offset][0] + 1 > fp[delta + 1 + offset][0]) {
-                    tmp = fp[delta - 1 + offset].concat();
-                    tmp[0]++;
-                } else {
-                    tmp = fp[delta + 1 + offset].concat();
-                }
-                var result = goDiagonally(A, B, k, tmp[0]);
-                fp[delta + offset][0] = result[0];
-                fp[delta + offset][1] = tmp[1].concat(result[1]);
-            }
-            if (fp[delta + offset][0] == N) {
-                return [delta + 2 * p, fp[delta + offset][1]];
-            }
-        }
-    }
-
-    function goDiagonally(A, B, k, y) {
-        var x = y - k;
-        var common = [];
-        if (y < A.length && x < B.length) {
-        }
-        while (y < A.length && x < B.length && A[y] == B[x]) {
-            common.push([y, x]);
-            x++;
-            y++;
-        }
-        return [y, common];
-    }
-    
-    document.getElementById('btn').addEventListener("click", differ);
-</script>
-
-
-<p><a href="https://github.com/Actat/differ">github</a></p>
-
-<h1 id="学んだこと">学んだこと</h1>
-
+<script>function differ(){var a=document.frm.prev.value,b=document.frm.curr.value,c=document.getElementById('result'),d=onp(a,b);c.innerHTML=formatDiff(a,b,d)}function formatDiff(e,f,c){for(var a=[0,0],b="distance: "+c[0]+"<br>"+"\n",d=0;d<c[1].length;d++){if(a[1]<c[1][d][1]){for(b+=' +';a[1]<c[1][d][1];)b+=f[a[1]],a[1]++;b+=' '}if(a[0]<c[1][d][0]){for(b+=' -';a[0]<c[1][d][0];)b+=e[a[0]],a[0]++;b+=' '}b+=e[c[1][d][0]],a[0]++,a[1]++}if(a[1]<f.length){for(b+=' +';a[1]<f.length;)b+=f[a[1]],a[1]++;b+=' '}if(a[0]<e.length){for(b+=' -';a[0]<e.length;)b+=e[a[0]],a[0]++;b+=' '}return b}function onp(h,i){var j=h.length,k=i.length,e,g,d,f,a,b,l,c;if(j<k){e=onp(i,h);for(g=0;g<e[1].length;g++)d=e[1][g][0],e[1][g][0]=e[1][g][1],e[1][g][1]=d;return e}f=j-k,a=[],b=k+1;for(g=0;g<k+j+3;g++)a.push([-1,[]]);a[0+b][0]=0;for(l=0;;l++){for(c=-l;c<f;c++)a[c-1+b][0]+1>a[c+1+b][0]?(d=a[c-1+b].concat(),d[0]++):d=a[c+1+b].concat(),e=goDiagonally(h,i,c,d[0]),a[c+b][0]=e[0],a[c+b][1]=d[1].concat(e[1]);for(c=l+f;c>f;c--)a[c-1+b][0]+1>a[c+1+b][0]?(d=a[c-1+b].concat(),d[0]++):d=a[c+1+b].concat(),e=goDiagonally(h,i,c,d[0]),a[c+b][0]=e[0],a[c+b][1]=d[1].concat(e[1]);if(a[f-1+b][0]+1>a[f+1+b][0]?(d=a[f-1+b].concat(),d[0]++):d=a[f+1+b].concat(),e=goDiagonally(h,i,c,d[0]),a[f+b][0]=e[0],a[f+b][1]=d[1].concat(e[1]),a[f+b][0]==j)return[f+2*l,a[f+b][1]]}}function goDiagonally(c,d,f,a){var b=a-f,e=[];for(a<c.length&&b<d.length;a<c.length&&b<d.length&&c[a]==d[b];)e.push([a,b]),b++,a++;return[a,e]}document.getElementById('btn').addEventListener("click",differ)</script>
+<p><a href=https://github.com/Actat/differ>github</a></p>
+<h1 id=学んだこと>学んだこと</h1>
 <ul>
 <li>編集距離とはどれくらい変化しているかを表したもの</li>
 <li>SESは編集距離が最短になる書き換えの方法</li>
 <li>LCSは一番長い共通部分のこと</li>
 <li>編集距離を求める時にSESがわかり，SESがわかればLCSもわかる</li>
 <li>2つのテキストを縦軸と横軸に置いたエディットグラフを考えると削除や追加の処理が縦横の移動になり，書き換えない部分は斜めの移動になる
-
 <ul>
 <li>経路探索の問題に落とし込める</li>
-</ul></li>
+</ul>
+</li>
 <li>Wuのアルゴリズムでは遠回りをしない部分からだんだんと探索する領域を広げることで効率よく探索を行う</li>
 <li>適当に再帰で探索を書いたらとても遅かったので，良いアルゴリズムを使うと良いと思った</li>
 </ul>
-
-<h1 id="参考">参考</h1>
-
+<h1 id=参考>参考</h1>
 <ul>
-<li>[1] Sun Wu, Udi Manber, Gene Myers and Webb Miller, &quot;An O(NP) sequence comparison algorithm,&quot; Information Processing Letters, Volume 35, Issue 6, pp. 317-323, 1990, <a href="https://doi.org/10.1016/0020-0190(90)90035-V">doi: 10.1016/0020-0190(90)90035-V</a>.</li>
-<li>[2] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ①仕組み、考え方,&quot; <a href="https://qiita.com/convto/items/e05d8147d9808a27b8ff">https://qiita.com/convto/items/e05d8147d9808a27b8ff</a>, 2020年8月26日閲覧.</li>
-<li>[3] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ②探索方法,&quot; <a href="https://qiita.com/convto/items/8faf530d304024a22769">https://qiita.com/convto/items/8faf530d304024a22769</a>, 2020年8月26日閲覧.</li>
-<li>[4] convto, &quot;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ③Goによる実装,&quot; <a href="https://qiita.com/convto/items/39efea78e23a944d0760">https://qiita.com/convto/items/39efea78e23a944d0760</a>, 2020年8月26日閲覧.</li>
-<li>[5] 久保達彦, &quot;diffの動作原理を知る～どのようにして差分を導き出すのか,&quot; <a href="https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1">https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1</a>, 2020年8月26日閲覧.</li>
-</ul><ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">つくったもの</a>
-   </li>
-  
+<li>[1] Sun Wu, Udi Manber, Gene Myers and Webb Miller, &ldquo;An O(NP) sequence comparison algorithm,&rdquo; Information Processing Letters, Volume 35, Issue 6, pp. 317-323, 1990, <a href=https://doi.org/10.1016/0020-0190(90)90035-V>doi: 10.1016/0020-0190(90)90035-V</a>.</li>
+<li>[2] convto, &ldquo;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ①仕組み、考え方,&rdquo; <a href=https://qiita.com/convto/items/e05d8147d9808a27b8ff>https://qiita.com/convto/items/e05d8147d9808a27b8ff</a>, 2020年8月26日閲覧.</li>
+<li>[3] convto, &ldquo;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ②探索方法,&rdquo; <a href=https://qiita.com/convto/items/8faf530d304024a22769>https://qiita.com/convto/items/8faf530d304024a22769</a>, 2020年8月26日閲覧.</li>
+<li>[4] convto, &ldquo;Wu らによる差分検出の O(NP) アルゴリズム実装シリーズ ③Goによる実装,&rdquo; <a href=https://qiita.com/convto/items/39efea78e23a944d0760>https://qiita.com/convto/items/39efea78e23a944d0760</a>, 2020年8月26日閲覧.</li>
+<li>[5] 久保達彦, &ldquo;diffの動作原理を知る～どのようにして差分を導き出すのか,&rdquo; <a href="https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1">https://gihyo.jp/dev/column/01/prog/2011/diff_sd200906?page=1</a>, 2020年8月26日閲覧.</li>
+</ul><ul class=pa0>
+<li class="list di">
+<a href=/tags/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">つくったもの</a>
+</li>
 </ul>
-<div class="mt6">
-        
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://actat.github.io/" >
-    &copy; 2023 おなかすいた
-  </a>
-    <div>
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
+<div class="mt6 instapaper_ignoref">
 </div>
-  </div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://actat.github.io/>
+&copy; 2023 おなかすいた
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+</div>
+</div>
+</div>
 </footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
+<script type=text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WGWKSLYDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WGWKSLYDD');
-</script>
-
-    
-
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
-
-
-  </body>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9WGWKSLYDD')</script>
+</body>
 </html>

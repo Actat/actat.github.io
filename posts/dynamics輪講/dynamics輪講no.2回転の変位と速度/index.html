@@ -1,445 +1,272 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>おなかすいた  | 【Dynamics輪講】No.2 回転の変位と速度</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
-
-    
-    
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
-    
-
-    
-
-    
-      
-    
-
-    
-
-    <meta property="og:title" content="【Dynamics輪講】No.2 回転の変位と速度" />
-<meta property="og:description" content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/" />
-<meta property="article:published_time" content="2019-04-27T23:02:40+09:00" />
-<meta property="article:modified_time" content="2019-04-27T23:02:40+09:00" />
-<meta itemprop="name" content="【Dynamics輪講】No.2 回転の変位と速度">
-<meta itemprop="description" content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標">
-<meta itemprop="datePublished" content="2019-04-27T23:02:40&#43;09:00" />
-<meta itemprop="dateModified" content="2019-04-27T23:02:40&#43;09:00" />
-<meta itemprop="wordCount" content="1977">
-
-
-
-<meta itemprop="keywords" content="Dynamics輪講," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="【Dynamics輪講】No.2 回転の変位と速度"/>
-<meta name="twitter:description" content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標"/>
-
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
-  </head>
-
-  <body class="ma0 avenir bg-near-white production">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
-      おなかすいた
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
-              Posts
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>【Dynamics輪講】No.2 回転の変位と速度 | おなかすいた</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="【Dynamics輪講】No.2 回転の変位と速度">
+<meta property="og:description" content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-04-27T23:02:40+09:00">
+<meta property="article:modified_time" content="2019-04-27T23:02:40+09:00">
+<meta itemprop=name content="【Dynamics輪講】No.2 回転の変位と速度">
+<meta itemprop=description content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標"><meta itemprop=datePublished content="2019-04-27T23:02:40+09:00">
+<meta itemprop=dateModified content="2019-04-27T23:02:40+09:00">
+<meta itemprop=wordCount content="1993">
+<meta itemprop=keywords content="Dynamics輪講,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="【Dynamics輪講】No.2 回転の変位と速度">
+<meta name=twitter:description content="前回は座標系から見た点の変位や速度を考えた． 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる． 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる． 今回は回転の変位を考える． これが済むと座標">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+おなかすいた
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/posts/ title="Posts page">
+Posts
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </nav>
-
-    </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">【Dynamics輪講】No.2 回転の変位と速度</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2019-04-27T23:02:40&#43;09:00">April 27, 2019</time>      
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/">前回</a>は座標系から見た点の変位や速度を考えた．
+</div>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/intent/tweet?url=https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.2%E5%9B%9E%E8%BB%A2%E3%81%AE%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6/&text=%e3%80%90Dynamics%e8%bc%aa%e8%ac%9b%e3%80%91No.2%20%e5%9b%9e%e8%bb%a2%e3%81%ae%e5%a4%89%e4%bd%8d%e3%81%a8%e9%80%9f%e5%ba%a6" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">【Dynamics輪講】No.2 回転の変位と速度</h1>
+<time class="f6 mv4 dib tracked" datetime=2019-04-27T23:02:40+09:00>April 27, 2019</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><a href=https://actat.github.io/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/>前回</a>は座標系から見た点の変位や速度を考えた．
 直交座標系から見た別の直交座標系の変位や速度を考えるとき，並進の変位と回転の変位の和と考えることができる．
 並進の変位については元の座標系から見たもう一つの座標系の原点の変位を考えれば良く，前回の内容そのものになる．
 今回は回転の変位を考える．
 これが済むと座標系から別の座標系を見たときのどう見えるかが表せるようになる．</p>
-
-<h2 id="回転行列">回転行列</h2>
-
-<p>直交座標系<span  class="math">\(oxyz\)</span>と，原点は共有するが向きが異なる直交座標系<span  class="math">\(ox'y'z'\)</span>を考える．
-<span  class="math">\(oxyz\)</span>の軸方向の単位ベクトルを<span  class="math">\(\boldsymbol{e}_x\)</span>，<span  class="math">\(\boldsymbol{e}_y\)</span>，<span  class="math">\(\boldsymbol{e}_z\)</span>とし，<span  class="math">\(ox'y'z'\)</span>の軸方向の単位ベクトルを<span  class="math">\(\boldsymbol{e}_{x'}\)</span>，<span  class="math">\(\boldsymbol{e}_{y'}\)</span>，<span  class="math">\(\boldsymbol{e}_{z'}\)</span>とする．（ここではひとまず<span  class="math">\(\boldsymbol{e}\)</span>は横ベクトルとしておく．）
-<figure>
-    <img src="/images/%e3%80%90Dynamics%e8%bc%aa%e8%ac%9b%e3%80%91No.2%e5%9b%9e%e8%bb%a2%e3%81%ae%e5%a4%89%e4%bd%8d%e3%81%a8%e9%80%9f%e5%ba%a6/%e5%ba%a7%e6%a8%99%e7%b3%bb.png"/> <figcaption>
-            <h4>基準座標系と向きの違う座標系</h4>
-        </figcaption>
+<h2 id=回転行列>回転行列</h2>
+<p>直交座標系$$oxyz$$と，原点は共有するが向きが異なる直交座標系$$ox&rsquo;y&rsquo;z'$$を考える．
+$$oxyz$$の軸方向の単位ベクトルを$$\boldsymbol{e}<em>x$$，$$\boldsymbol{e}<em>y$$，$$\boldsymbol{e}<em>z$$とし，$$ox&rsquo;y&rsquo;z'$$の軸方向の単位ベクトルを$$\boldsymbol{e}</em>{x'}$$，$$\boldsymbol{e}</em>{y'}$$，$$\boldsymbol{e}</em>{z'}$$とする．（ここではひとまず$$\boldsymbol{e}$$は横ベクトルとしておく．）
+<figure><img src=/images/%e3%80%90Dynamics%e8%bc%aa%e8%ac%9b%e3%80%91No.2%e5%9b%9e%e8%bb%a2%e3%81%ae%e5%a4%89%e4%bd%8d%e3%81%a8%e9%80%9f%e5%ba%a6/%e5%ba%a7%e6%a8%99%e7%b3%bb.png><figcaption>
+<h4>基準座標系と向きの違う座標系</h4>
+</figcaption>
 </figure>
 </p>
-
 <p>方向余弦を用いてベクトル間の関係を表現する．
 単位ベクトルなので，方向余弦は</p>
-
-<p><span  class="math">\[
-c_{x'y}=\boldsymbol{e}_{x'}\cdot\boldsymbol{e}_{y}=\boldsymbol{e}_{y}\cdot\boldsymbol{e}_{x'}
-\]</span></p>
-
+<p>$$
+c_{x&rsquo;y}=\boldsymbol{e}<em>{x'}\cdot\boldsymbol{e}</em>{y}=\boldsymbol{e}<em>{y}\cdot\boldsymbol{e}</em>{x'}
+$$</p>
 <p>のように内積であらわされる．
-これを利用すると<span  class="math">\(\boldsymbol{e}_{x'}\)</span>，<span  class="math">\(\boldsymbol{e}_{y'}\)</span>，<span  class="math">\(\boldsymbol{e}_{z'}\)</span>は次のようにあらわされる．</p>
-
-<p><span  class="math">\[
-\boldsymbol{e}_{x'}=c_{x'x}\boldsymbol{e}_x+c_{x'y}\boldsymbol{e}_y+c_{x'z}\boldsymbol{e}_z\\
-\boldsymbol{e}_{y'}=c_{y'x}\boldsymbol{e}_x+c_{y'y}\boldsymbol{e}_y+c_{y'z}\boldsymbol{e}_z\\
-\boldsymbol{e}_{z'}=c_{z'x}\boldsymbol{e}_x+c_{z'y}\boldsymbol{e}_y+c_z{'z}\boldsymbol{e}_z\\
-\]</span></p>
-
+これを利用すると$$\boldsymbol{e}<em>{x'}$$，$$\boldsymbol{e}</em>{y'}$$，$$\boldsymbol{e}_{z'}$$は次のようにあらわされる．</p>
+<p>$$
+\boldsymbol{e}<em>{x'}=c</em>{x&rsquo;x}\boldsymbol{e}<em>x+c</em>{x&rsquo;y}\boldsymbol{e}<em>y+c</em>{x&rsquo;z}\boldsymbol{e}<em>z\
+\boldsymbol{e}</em>{y'}=c_{y&rsquo;x}\boldsymbol{e}<em>x+c</em>{y&rsquo;y}\boldsymbol{e}<em>y+c</em>{y&rsquo;z}\boldsymbol{e}<em>z\
+\boldsymbol{e}</em>{z'}=c_{z&rsquo;x}\boldsymbol{e}<em>x+c</em>{z&rsquo;y}\boldsymbol{e}_y+c_z{&lsquo;z}\boldsymbol{e}_z\
+$$</p>
 <p>これを行列表現にすると次のようになる．</p>
-
-<p><span  class="math">\[
+<p>$$
 \left(
 \begin{array}{c}
-\boldsymbol{e}_{x'} \\
-\boldsymbol{e}_{y'} \\
-\boldsymbol{e}_{z'} \\
+\boldsymbol{e}<em>{x&rsquo;} \
+\boldsymbol{e}</em>{y'} \
+\boldsymbol{e}<em>{z'} \
 \end{array}
 \right)=
 \left(
 \begin{array}{ccc}
-c_{x'x} & c_{x'y} & c_{x'z} \\
-c_{y'x} & c_{y'y} & c_{y'z} \\
-c_{z'x} & c_{z'y} & c_{z'z} \\
+c</em>{x&rsquo;x} & c_{x&rsquo;y} & c_{x&rsquo;z} \
+c_{y&rsquo;x} & c_{y&rsquo;y} & c_{y&rsquo;z} \
+c_{z&rsquo;x} & c_{z&rsquo;y} & c_{z&rsquo;z} \
 \end{array}
 \right)
 \left(
 \begin{array}{c}
-\boldsymbol{e}_x \\
-\boldsymbol{e}_y \\
-\boldsymbol{e}_z \\
+\boldsymbol{e}_x \
+\boldsymbol{e}_y \
+\boldsymbol{e}_z \
 \end{array}
 \right)
-\]</span></p>
-
+$$</p>
 <p>方向余弦を並べた行列</p>
-
-<p><span  class="math">\[
+<p>$$
 \boldsymbol{C}=
 \left(
 \begin{array}{ccc}
-c_{x'x} & c_{x'y} & c_{x'z} \\
-c_{y'x} & c_{y'y} & c_{y'z} \\
-c_{z'x} & c_{z'y} & c_{z'z} \\
+c_{x&rsquo;x} & c_{x&rsquo;y} & c_{x&rsquo;z} \
+c_{y&rsquo;x} & c_{y&rsquo;y} & c_{y&rsquo;z} \
+c_{z&rsquo;x} & c_{z&rsquo;y} & c_{z&rsquo;z} \
 \end{array}
 \right)
-\]</span></p>
-
-<p>は回転行列と呼ばれ，<span  class="math">\(oxyz\)</span>と<span  class="math">\(ox'y'z'\)</span>の間の回転を表す．</p>
-
-<p>逆に<span  class="math">\(\boldsymbol{e}_x\)</span>，<span  class="math">\(\boldsymbol{e}_y\)</span>，<span  class="math">\(\boldsymbol{e}_z\)</span>を<span  class="math">\(\boldsymbol{e}_{x'}\)</span>，<span  class="math">\(\boldsymbol{e}_{y'}\)</span>，<span  class="math">\(\boldsymbol{e}_{z'}\)</span>であらわすと</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>は回転行列と呼ばれ，$$oxyz$$と$$ox&rsquo;y&rsquo;z'$$の間の回転を表す．</p>
+<p>逆に$$\boldsymbol{e}<em>x$$，$$\boldsymbol{e}<em>y$$，$$\boldsymbol{e}<em>z$$を$$\boldsymbol{e}</em>{x'}$$，$$\boldsymbol{e}</em>{y'}$$，$$\boldsymbol{e}</em>{z'}$$であらわすと</p>
+<p>$$
 \left(
 \begin{array}{c}
-\boldsymbol{e}_x \\
-\boldsymbol{e}_y \\
-\boldsymbol{e}_z \\
+\boldsymbol{e}<em>x \
+\boldsymbol{e}<em>y \
+\boldsymbol{e}<em>z \
 \end{array}
 \right)=\boldsymbol{C}^{\mathrm{T}}
 \left(
 \begin{array}{c}
-\boldsymbol{e}_{x'} \\
-\boldsymbol{e}_{y'} \\
-\boldsymbol{e}_{z'} \\
+\boldsymbol{e}</em>{x'} \
+\boldsymbol{e}</em>{y'} \
+\boldsymbol{e}</em>{z'} \
 \end{array}
 \right)
-\]</span></p>
-
+$$</p>
 <p>となる．
 ここから回転行列は次の性質をみたす．</p>
-
-<p><span  class="math">\[
-\boldsymbol{C}^{-1}=\boldsymbol{C}^{\mathrm{T}}\\
+<p>$$
+\boldsymbol{C}^{-1}=\boldsymbol{C}^{\mathrm{T}}\
 \boldsymbol{C}^{\mathrm{T}}\boldsymbol{C}=\boldsymbol{C}\boldsymbol{C}^{\mathrm{T}}=\left[1\right]=
 \left(
 \begin{array}{ccc}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1 \\
+1 & 0 & 0 \
+0 & 1 & 0 \
+0 & 0 & 1 \
 \end{array}
 \right)
-\]</span></p>
-
-<p>また，回転行列は<span  class="math">\(\det{\boldsymbol{C}}=1\)</span>を満たす．</p>
-
-<h2 id="回転を表す有向線分">回転を表す有向線分</h2>
-
+$$</p>
+<p>また，回転行列は$$\det{\boldsymbol{C}}=1$$を満たす．</p>
+<h2 id=回転を表す有向線分>回転を表す有向線分</h2>
 <p>回転は回転行列のほかに有向線分によっても表現できる．
 有向線分の向きは回転軸に沿う右ねじの向きとし，長さで回転の大きさを表現すると有向線分は回転行列と1対1に対応する．
 ただし，２つの回転移動を表す有向線分はベクトルの和のように有向線分を足し合わせても全体の回転を表す有向線分と必ずしも合致しない．</p>
-
-<p>回転軸の大きさを<span  class="math">\(\theta\)</span>，方向を表す単位ベクトルを<span  class="math">\(\boldsymbol{e}_\theta\)</span>とすると，同じ回転を表す回転行列は<span  class="math">\(l=\boldsymbol{e}_\theta\cdot\boldsymbol{e}_x\)</span>，<span  class="math">\(m=\boldsymbol{e}_\theta\cdot\boldsymbol{e}_y\)</span>，<span  class="math">\(n=\boldsymbol{e}_\theta\cdot\boldsymbol{e}_z\)</span>とすると</p>
-
-<p><span  class="math">\[
+<p>回転軸の大きさを$$\theta$$，方向を表す単位ベクトルを$$\boldsymbol{e}<em>\theta$$とすると，同じ回転を表す回転行列は$$l=\boldsymbol{e}</em>\theta\cdot\boldsymbol{e}<em>x$$，$$m=\boldsymbol{e}</em>\theta\cdot\boldsymbol{e}<em>y$$，$$n=\boldsymbol{e}</em>\theta\cdot\boldsymbol{e}_z$$とすると</p>
+<p>$$
 \left[ C \right] = \cos{\theta}
 \left(\begin{array}{ccc}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1 \\
+1 & 0 & 0 \
+0 & 1 & 0 \
+0 & 0 & 1 \
 \end{array}
 \right) + \left(1 - \cos{\theta}\right)
 \left(\begin{array}{ccc}
-l^2 & lm & ln \\
-lm & m^2 & mn \\
-ln & mn & n^2 \\
+l^2 & lm & ln \
+lm & m^2 & mn \
+ln & mn & n^2 \
 \end{array}
 \right) + \sin{\theta}
 \left(\begin{array}{ccc}
-0 & n & -m \\
--n & 0 & l \\
-m & -l & 0 \\
+0 & n & -m \
+-n & 0 & l \
+m & -l & 0 \
 \end{array}
 \right)
-\]</span></p>
-
+$$</p>
 <p>とあらわされる．</p>
-
-<p>微小な大きさ<span  class="math">\(\Delta\theta\)</span>の回転を表す有向線分の各軸方向の成分を<span  class="math">\(\Delta\theta_x\)</span>，<span  class="math">\(\Delta\theta_y\)</span>，<span  class="math">\(\Delta\theta_z\)</span>とすると，方向余弦は<span  class="math">\(\frac{\Delta\theta_x}{\Delta\theta}\)</span>，<span  class="math">\(\frac{\Delta\theta_y}{\Delta\theta}\)</span>，<span  class="math">\(\frac{\Delta\theta_z}{\Delta\theta}\)</span>となる．
-最終的に時間微分を考えるので<span  class="math">\(\Delta\theta\)</span>の2次以上の項を無視すると回転行列は次のようになる．</p>
-
-<p><span  class="math">\[
+<p>微小な大きさ$$\Delta\theta$$の回転を表す有向線分の各軸方向の成分を$$\Delta\theta_x$$，$$\Delta\theta_y$$，$$\Delta\theta_z$$とすると，方向余弦は$$\frac{\Delta\theta_x}{\Delta\theta}$$，$$\frac{\Delta\theta_y}{\Delta\theta}$$，$$\frac{\Delta\theta_z}{\Delta\theta}$$となる．
+最終的に時間微分を考えるので$$\Delta\theta$$の2次以上の項を無視すると回転行列は次のようになる．</p>
+<p>$$
 \left[ C \right] =
 \left(\begin{array}{ccc}
-1 & \Delta\theta_z & -\Delta\theta_y \\
--\Delta\theta_z & 1 & \Delta\theta_x \\
-\Delta\theta_y & -\Delta\theta_x & 1 \\
+1 & \Delta\theta_z & -\Delta\theta_y \
+-\Delta\theta_z & 1 & \Delta\theta_x \
+\Delta\theta_y & -\Delta\theta_x & 1 \
 \end{array}
 \right)
-\]</span></p>
-
+$$</p>
 <p>微小な回転を2つ組み合わせる場合，行列の積を計算して2次以上の項を無視すると次のようになる．</p>
-
-<p><span  class="math">\[
+<p>$$
 \left[ C_1 \right]\left[ C_2 \right] = \left(\begin{array}{ccc}
-1 & \Delta\theta_{1z}+\Delta\theta_{2z} & -\Delta\theta_{1y}-\Delta\theta_{2y} \\
--\Delta\theta_{1z}-\Delta\theta_{2z} & 1 & \Delta\theta_{1x}+\Delta\theta_{2x} \\
-\Delta\theta_{1y}+\Delta\theta_{2y} & -\Delta\theta_{1x}-\Delta\theta_{2x} & 1 \\
+1 & \Delta\theta_{1z}+\Delta\theta_{2z} & -\Delta\theta_{1y}-\Delta\theta_{2y} \
+-\Delta\theta_{1z}-\Delta\theta_{2z} & 1 & \Delta\theta_{1x}+\Delta\theta_{2x} \
+\Delta\theta_{1y}+\Delta\theta_{2y} & -\Delta\theta_{1x}-\Delta\theta_{2x} & 1 \
 \end{array}
 \right)
-\]</span></p>
-
+$$</p>
 <p>回転が微小な場合，2つの回転を組み合わせた回転を表す有向線分は，それぞれの回転を表す有向線分のベクトル和になる．</p>
-
-<h2 id="角速度ベクトル">角速度ベクトル</h2>
-
+<h2 id=角速度ベクトル>角速度ベクトル</h2>
 <p>回転の時間変化が角速度である．
 回転を表す有向線分の時間微分を考えると，上の議論から角速度はベクトルになる．</p>
-<ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/dynamics%E8%BC%AA%E8%AC%9B" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Dynamics輪講</a>
-   </li>
-  
+<ul class=pa0>
+<li class="list di">
+<a href=/tags/dynamics%E8%BC%AA%E8%AC%9B/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Dynamics輪講</a>
+</li>
 </ul>
-<div class="mt6">
-        
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/">【Dynamics輪講】NO.1 変位と速度と加速度</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.0%E3%81%AF%E3%81%98%E3%82%81%E3%81%BE%E3%81%99/">【Dynamics輪講】No.0 はじめます</a>
-        </li>
-	    
-    </ul>
+<div class="mt6 instapaper_ignoref">
 </div>
-
+</div>
+<aside class="w-30-l mt6-l">
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p>
+<ul class="pa0 list">
+<li class=mb2>
+<a href=/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.1%E5%A4%89%E4%BD%8D%E3%81%A8%E9%80%9F%E5%BA%A6%E3%81%A8%E5%8A%A0%E9%80%9F%E5%BA%A6/>【Dynamics輪講】NO.1 変位と速度と加速度</a>
+</li>
+<li class=mb2>
+<a href=/posts/dynamics%E8%BC%AA%E8%AC%9B/dynamics%E8%BC%AA%E8%AC%9Bno.0%E3%81%AF%E3%81%98%E3%82%81%E3%81%BE%E3%81%99/>【Dynamics輪講】No.0 はじめます</a>
+</li>
+</ul>
+</div>
 </aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://actat.github.io/" >
-    &copy; 2023 おなかすいた
-  </a>
-    <div>
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://actat.github.io/>
+&copy; 2023 おなかすいた
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
 </div>
-  </div>
+</div>
+</div>
 </footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
+<script type=text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WGWKSLYDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WGWKSLYDD');
-</script>
-
-    
-
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
-
-
-  </body>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9WGWKSLYDD')</script>
+</body>
 </html>

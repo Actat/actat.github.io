@@ -1,192 +1,94 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>おなかすいた  | HugoとGitHub Pagesでブログ的なものをはじめよう</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
-
-    
-    
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
-    
-
-    
-
-    
-      
-    
-
-    
-
-    <meta property="og:title" content="HugoとGitHub Pagesでブログ的なものをはじめよう" />
-<meta property="og:description" content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/" />
-<meta property="article:published_time" content="2019-04-14T21:59:04+09:00" />
-<meta property="article:modified_time" content="2019-04-14T21:59:04+09:00" />
-<meta itemprop="name" content="HugoとGitHub Pagesでブログ的なものをはじめよう">
-<meta itemprop="description" content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒">
-<meta itemprop="datePublished" content="2019-04-14T21:59:04&#43;09:00" />
-<meta itemprop="dateModified" content="2019-04-14T21:59:04&#43;09:00" />
-<meta itemprop="wordCount" content="1864">
-
-
-
-<meta itemprop="keywords" content="hugo,githubpages,環境構築," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HugoとGitHub Pagesでブログ的なものをはじめよう"/>
-<meta name="twitter:description" content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒"/>
-
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
-  </head>
-
-  <body class="ma0 avenir bg-near-white production">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
-      おなかすいた
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
-              Posts
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>HugoとGitHub Pagesでブログ的なものをはじめよう | おなかすいた</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="HugoとGitHub Pagesでブログ的なものをはじめよう">
+<meta property="og:description" content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-04-14T21:59:04+09:00">
+<meta property="article:modified_time" content="2019-04-14T21:59:04+09:00">
+<meta itemprop=name content="HugoとGitHub Pagesでブログ的なものをはじめよう">
+<meta itemprop=description content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒"><meta itemprop=datePublished content="2019-04-14T21:59:04+09:00">
+<meta itemprop=dateModified content="2019-04-14T21:59:04+09:00">
+<meta itemprop=wordCount content="1864">
+<meta itemprop=keywords content="hugo,githubpages,環境構築,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="HugoとGitHub Pagesでブログ的なものをはじめよう">
+<meta name=twitter:description content="abstract 趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ． 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる． 手っ取り早くTwitterに記録した例がある． 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+おなかすいた
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/posts/ title="Posts page">
+Posts
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </nav>
-
-    </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">HugoとGitHub Pagesでブログ的なものをはじめよう</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2019-04-14T21:59:04&#43;09:00">April 14, 2019</time>      
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="abstract">abstract</h1>
+</div>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/intent/tweet?url=https://actat.github.io/posts/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/hugo%E3%81%A8githubpages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86/&text=Hugo%e3%81%a8GitHub%20Pages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e7%9a%84%e3%81%aa%e3%82%82%e3%81%ae%e3%82%92%e3%81%af%e3%81%98%e3%82%81%e3%82%88%e3%81%86" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">HugoとGitHub Pagesでブログ的なものをはじめよう</h1>
+<time class="f6 mv4 dib tracked" datetime=2019-04-14T21:59:04+09:00>April 14, 2019</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id=abstract>abstract</h1>
 <p>趣味の作業記録を書く場所の確保は記録する習慣がある人にとって大切だ．
 作業内容を気軽に記録し，必要な時に検索して見返せる環境を整えることで安心して作業できるようになる．</p>
-<p>手っ取り早く<a href="https://twitter.com/Actat85/status/1032276440094400513">Twitterに記録した例</a>がある．
+<p>手っ取り早く<a href=https://twitter.com/Actat85/status/1032276440094400513>Twitterに記録した例</a>がある．
 進捗があるごとにスレッドに追加したが，毎回スレッドを掘り起こして追加するのが面倒，面倒なのであまり更新しない，検索性が悪い，一度に書ける情報量が少ないといった問題点があった．</p>
 <p>ブログに記録すると良いという話を聞き，始めることにした．
 ここには開設する作業の記録を記す．</p>
-<h1 id="どうしてhugoとgithub-pagesなのか">どうしてHugoとGitHub Pagesなのか</h1>
+<h1 id=どうしてhugoとgithub-pagesなのか>どうしてHugoとGitHub Pagesなのか</h1>
 <p>ブログの始め方には大きく分けて2種類ある．</p>
 <ul>
-<li>ブログを書く専用のサービスを利用する（<a href="https://hatenablog.com/">はてなブログ</a>など）</li>
+<li>ブログを書く専用のサービスを利用する（<a href=https://hatenablog.com/>はてなブログ</a>など）</li>
 <li>自分でホームページを作る（今回はこっち）</li>
 </ul>
 <p>これに関しては「趣味の問題」で後者にした．
@@ -197,33 +99,33 @@ Jekyll + GitHub PagesとかHugo + GithHub Pagesとかいろいろあるらしい
 ということでHugoとGitHub Pagesにした．
 ダメだったらやり直せばいいんや．</p>
 <p>ということで参考にしたかった人，いたらごめんなさい．</p>
-<h1 id="作業内容">作業内容</h1>
-<p><a href="https://gohugo.io/getting-started/quick-start/">Quick Start</a>に従ってテーマの追加まで作業した．
+<h1 id=作業内容>作業内容</h1>
+<p><a href=https://gohugo.io/getting-started/quick-start/>Quick Start</a>に従ってテーマの追加まで作業した．
 インストールはWSLのUbuntuで<code>apt install</code>した．
 インストーラをダウンロードするとか再起動要求されるとかそういう面倒が発生しないのでWSLに入れれば済むものはそうしてしまいたい主義（あたまをつかわない）．
-Quick Startの通りにしたのでテーマも<a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke</a>になっている．
+Quick Startの通りにしたのでテーマも<a href=https://themes.gohugo.io/gohugo-theme-ananke/>Ananke</a>になっている．
 気が向いたら変えるかもしれないし，ずっとこのままかもしれない．</p>
-<p><a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke</a>には丁寧に使い方が書かれているので，<code>config.toml</code>をコピーして設定を書き，hero backgroundを携帯の中に入っていた適当な画像にした．</p>
+<p><a href=https://themes.gohugo.io/gohugo-theme-ananke/>Ananke</a>には丁寧に使い方が書かれているので，<code>config.toml</code>をコピーして設定を書き，hero backgroundを携帯の中に入っていた適当な画像にした．</p>
 <p><code>themes/ananke/exampleSite/content</code>の中にある<code>about</code>を<code>content</code>の中にコピーして<code>_index.md</code>を編集した．</p>
 <p>出来上がりの確認は</p>
-<pre><code>$ hugo server -D
-</code></pre><p>して<a href="http://localhost:1313">http://localhost:1313</a>にアクセスする．</p>
+<pre tabindex=0><code>$ hugo server -D
+</code></pre><p>して<a href=http://localhost:1313>http://localhost:1313</a>にアクセスする．</p>
 <p><code>config.toml</code>の<code>base url</code>をGitHub Pagesのものにして保存．
 ここまでの内容で普通のリポジトリとしてgithubにpushした．</p>
 <p>GitHub Pagesのためのリポジトリをgithub上で作成．
 普段と違うのは，リポジトリの名前を<code>[ username ].github.io</code>とすること．
 空のリポジトリを作ったら</p>
-<pre><code>$ git submodule add git@github.com:[ username ]/[ username ].github.io public
+<pre tabindex=0><code>$ git submodule add git@github.com:[ username ]/[ username ].github.io public
 </code></pre><p>これを先にやっておけば，<code>$ hugo</code>すると公開する用のファイル一式が<code>public</code>の中にできるので，そのままcommitしてpushして公開までスムーズにできる．</p>
 <p>ここまで済んだので今まさにコンテンツを追加しようとしている．
 まず，</p>
-<pre><code>$ hugo new posts/HugoとGitHubPagesでブログ的なものをはじめよう.md
+<pre tabindex=0><code>$ hugo new posts/HugoとGitHubPagesでブログ的なものをはじめよう.md
 </code></pre><p>して新しくmarkdownを作った．
 そして今まさに編集している．</p>
-<p>編集中も<code>$ hugo server -D</code>して<a href="http://localhost:1313">localhost:1313</a>にアクセスすればプレビューが可能なようだ．
+<p>編集中も<code>$ hugo server -D</code>して<a href=http://localhost:1313>localhost:1313</a>にアクセスすればプレビューが可能なようだ．
 ファイルを保存するたびに勝手に変更を反映してくれるので便利かもしれない．</p>
 <p>記事を書き終わったら一番上の</p>
-<pre><code>---
+<pre tabindex=0><code>---
 title: &quot;HugoとGitHub Pagesでブログ的なものをはじめよう&quot;
 date: 2019-04-14T21:59:04+09:00
 draft: true
@@ -235,98 +137,54 @@ github.ioのほうでこれが読めているのであれば今後もこの手�
 <p><del>本文のほうに「<code>draft: true</code>を<code>false</code>に変える」と書いたら実際に書き換えるのを忘れて時間が溶けたが</del> ここまでうまくいった．</p>
 <p>記事にタグを設定して参照性を高めることができるそうなので設定していく．
 頭に書き加えるとできるらしい．</p>
-<pre><code>---
+<pre tabindex=0><code>---
 title: &quot;HugoとGitHub Pagesでブログ的なものをはじめよう&quot;
 date: 2019-04-14T21:59:04+09:00
 draft: false
 tags : [ &quot;hugo&quot;, &quot;githubpages&quot;, &quot;環境構築&quot;]
 ---
 </code></pre><p>とりあえずこんな感じにした．</p>
-<ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/hugo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hugo</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/githubpages" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">githubpages</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">環境構築</a>
-   </li>
-  
+<ul class=pa0>
+<li class="list di">
+<a href=/tags/hugo/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hugo</a>
+</li>
+<li class="list di">
+<a href=/tags/githubpages/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">githubpages</a>
+</li>
+<li class="list di">
+<a href=/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">環境構築</a>
+</li>
 </ul>
-<div class="mt6">
-        
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://actat.github.io/" >
-    &copy; 2023 おなかすいた
-  </a>
-    <div>
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
+<div class="mt6 instapaper_ignoref">
 </div>
-  </div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://actat.github.io/>
+&copy; 2023 おなかすいた
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+</div>
+</div>
+</div>
 </footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
+<script type=text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WGWKSLYDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WGWKSLYDD');
-</script>
-
-    
-
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
-
-
-  </body>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9WGWKSLYDD')</script>
+</body>
 </html>

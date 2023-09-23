@@ -1,193 +1,95 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>おなかすいた  | 一回の回転を直交する軸での二回の回転に分ける</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
-
-    
-    
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
-    
-
-    
-
-    
-      
-    
-
-    
-
-    <meta property="og:title" content="一回の回転を直交する軸での二回の回転に分ける" />
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>一回の回転を直交する軸での二回の回転に分ける | おなかすいた</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="一回の回転を直交する軸での二回の回転に分割する方法です．
+座標系の設定に使うために導出しました．
+C++による実装も公開しています．">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="一回の回転を直交する軸での二回の回転に分ける">
 <meta property="og:description" content="一回の回転を直交する軸での二回の回転に分割する方法です．
 座標系の設定に使うために導出しました．
-C&#43;&#43;による実装も公開しています．" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://actat.github.io/posts/%E4%B8%80%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%82%92%E7%9B%B4%E4%BA%A4%E3%81%99%E3%82%8B%E8%BB%B8%E3%81%A7%E3%81%AE%E4%BA%8C%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E5%88%86%E3%81%91%E3%82%8B/" />
-<meta property="article:published_time" content="2023-03-21T09:08:29+09:00" />
-<meta property="article:modified_time" content="2023-03-21T09:08:29+09:00" />
-<meta itemprop="name" content="一回の回転を直交する軸での二回の回転に分ける">
-<meta itemprop="description" content="一回の回転を直交する軸での二回の回転に分割する方法です．
+C++による実装も公開しています．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://actat.github.io/posts/%E4%B8%80%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%82%92%E7%9B%B4%E4%BA%A4%E3%81%99%E3%82%8B%E8%BB%B8%E3%81%A7%E3%81%AE%E4%BA%8C%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E5%88%86%E3%81%91%E3%82%8B/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-03-21T09:08:29+09:00">
+<meta property="article:modified_time" content="2023-03-21T09:08:29+09:00">
+<meta itemprop=name content="一回の回転を直交する軸での二回の回転に分ける">
+<meta itemprop=description content="一回の回転を直交する軸での二回の回転に分割する方法です．
 座標系の設定に使うために導出しました．
-C&#43;&#43;による実装も公開しています．">
-<meta itemprop="datePublished" content="2023-03-21T09:08:29&#43;09:00" />
-<meta itemprop="dateModified" content="2023-03-21T09:08:29&#43;09:00" />
-<meta itemprop="wordCount" content="3092">
-
-
-
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一回の回転を直交する軸での二回の回転に分ける"/>
-<meta name="twitter:description" content="一回の回転を直交する軸での二回の回転に分割する方法です．
+C++による実装も公開しています．"><meta itemprop=datePublished content="2023-03-21T09:08:29+09:00">
+<meta itemprop=dateModified content="2023-03-21T09:08:29+09:00">
+<meta itemprop=wordCount content="3092">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="一回の回転を直交する軸での二回の回転に分ける">
+<meta name=twitter:description content="一回の回転を直交する軸での二回の回転に分割する方法です．
 座標系の設定に使うために導出しました．
-C&#43;&#43;による実装も公開しています．"/>
-
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
-  </head>
-
-  <body class="ma0 avenir bg-near-white production">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="https://actat.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
-      おなかすいた
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
-              Posts
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+C++による実装も公開しています．">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+おなかすいた
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/posts/ title="Posts page">
+Posts
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </span></a>
-
-
-
-
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </nav>
-
-    </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-140153146-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">一回の回転を直交する軸での二回の回転に分ける</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2023-03-21T09:08:29&#43;09:00">March 21, 2023</time>      
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>一回の回転を直交する軸での二回の回転に分割する方法です．
+</div>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/intent/tweet?url=https://actat.github.io/posts/%E4%B8%80%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%82%92%E7%9B%B4%E4%BA%A4%E3%81%99%E3%82%8B%E8%BB%B8%E3%81%A7%E3%81%AE%E4%BA%8C%E5%9B%9E%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E5%88%86%E3%81%91%E3%82%8B/&text=%e4%b8%80%e5%9b%9e%e3%81%ae%e5%9b%9e%e8%bb%a2%e3%82%92%e7%9b%b4%e4%ba%a4%e3%81%99%e3%82%8b%e8%bb%b8%e3%81%a7%e3%81%ae%e4%ba%8c%e5%9b%9e%e3%81%ae%e5%9b%9e%e8%bb%a2%e3%81%ab%e5%88%86%e3%81%91%e3%82%8b" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">一回の回転を直交する軸での二回の回転に分ける</h1>
+<time class="f6 mv4 dib tracked" datetime=2023-03-21T09:08:29+09:00>March 21, 2023</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>一回の回転を直交する軸での二回の回転に分割する方法です．
 座標系の設定に使うために導出しました．
 C++による実装も公開しています．</p>
-
-<h2 id="モチベーション">モチベーション</h2>
-
+<h2 id=モチベーション>モチベーション</h2>
 <p>ロボットを歩行させるため，足を置く位置を地面に固定された座標系<code>map</code>上で計画するつもりです．
 そのためにロボットの座標系<code>base_link</code>の「前方」が<code>map</code>ではどの向きなのかの情報が必要です．
 ロボットには IMU が搭載されており，鉛直上向きを z 軸とする適当な初期位置<code>odom</code>を基準に<code>base_link</code>の姿勢が推定されます．
@@ -195,233 +97,154 @@ C++による実装も公開しています．</p>
 そこで，<code>map</code>と<code>odom</code>の間の，z 軸のまわりの回転については，
 ロボットを起動した後に「ロボットの前方が<code>map</code>の x 軸の方向と合うように<code>odom</code>の向きを変更しなさい」という指令をしたいと考えています．
 これを実現するために，<code>odom</code>から<code>base_link</code>に至る回転を</p>
-
 <ol>
 <li>z 軸まわりの回転</li>
 <li>z 軸と直交な軸のまわりの回転</li>
 </ol>
-
 <p>の 2 回の回転に分解すると良いと考えました．</p>
-
-<h2 id="表記に関する約束">表記に関する約束</h2>
-
-<p>三次元での回転はクォータニオンで表現し，太字で<span  class="math">\(\boldsymbol{q}\)</span>のように書くことにします．
-回転の合成については，<span  class="math">\(\boldsymbol{q}\)</span>による回転の後に続けて<span  class="math">\(\boldsymbol{p}\)</span>によって回転させると<span  class="math">\(\boldsymbol{r}\)</span>によって回転させたのと同じ結果を得られることを</p>
-
-<p><span  class="math">\[
+<h2 id=表記に関する約束>表記に関する約束</h2>
+<p>三次元での回転はクォータニオンで表現し，太字で$$\boldsymbol{q}$$のように書くことにします．
+回転の合成については，$$\boldsymbol{q}$$による回転の後に続けて$$\boldsymbol{p}$$によって回転させると$$\boldsymbol{r}$$によって回転させたのと同じ結果を得られることを</p>
+<p>$$
 \boldsymbol{r}=\boldsymbol{p}\boldsymbol{q}
-\]</span></p>
-
+$$</p>
 <p>と書くことにします．
-ベクトルは矢印を使った<span  class="math">\(\vec{v}\)</span>で表記し，クォータニオンと混同しないようにします．
-クォータニオン<span  class="math">\(\boldsymbol{q}\)</span>によってベクトル<span  class="math">\(\vec{v}\)</span>を回転させる操作は，
-クォータニオンからベクトルにする操作を<span  class="math">\(\mathrm{vect}\)</span>，ベクトルからクォータニオンにする操作を<span  class="math">\(\mathrm{quat}\)</span>として丁寧に書くと</p>
-
-<p><span  class="math">\[
+ベクトルは矢印を使った$$\vec{v}$$で表記し，クォータニオンと混同しないようにします．
+クォータニオン$$\boldsymbol{q}$$によってベクトル$$\vec{v}$$を回転させる操作は，
+クォータニオンからベクトルにする操作を$$\mathrm{vect}$$，ベクトルからクォータニオンにする操作を$$\mathrm{quat}$$として丁寧に書くと</p>
+<p>$$
 \mathrm{vect}\left(\boldsymbol{q}\cdot \mathrm{quat}\left(\vec{v}\right) \cdot\bar{\boldsymbol{q}}\right)
-\]</span></p>
-
+$$</p>
 <p>のようになりますが，単に</p>
-
-<p><span  class="math">\[
+<p>$$
 \boldsymbol{q}\vec{v}
-\]</span></p>
-
+$$</p>
 <p>と書くことにします．</p>
-
-<h2 id="解決する問題">解決する問題</h2>
-
-<p>回転を表すクォータニオン<span  class="math">\(\boldsymbol{r}\)</span>と一回目の回転の軸の向きを表す単位ベクトル<span  class="math">\(\vec{e}_q\)</span>を入力とし，
-2 つの回転を表すクォータニオン<span  class="math">\(\boldsymbol{p}, \boldsymbol{q}\)</span>を求めます．
-2 回の回転<span  class="math">\(\boldsymbol{p}, \boldsymbol{q}\)</span>は
-<span  class="math">\(\boldsymbol{q}\)</span>による回転の後に続けて<span  class="math">\(\boldsymbol{p}\)</span>によって回転させると<span  class="math">\(\boldsymbol{r}\)</span>によって回転させたのと同じ結果を得られることと，
-<span  class="math">\(\boldsymbol{p}, \boldsymbol{q}\)</span>の回転軸は直交する（または少なくとも一方は無回転である）ことの 2 つの条件を満たします．</p>
-
-<h2 id="解法">解法</h2>
-
-<p>回転軸は回転によって変化しないので，<span  class="math">\(\vec{e}_q=\boldsymbol{q}\vec{e}_q\)</span>です．
-任意のベクトル<span  class="math">\(\vec{v}\)</span>で<span  class="math">\(\boldsymbol{r}\vec{v}=\boldsymbol{p}\boldsymbol{q}\vec{v}\)</span>が成り立ちます．
-ここに<span  class="math">\(\vec{e}_q\)</span>を代入すると</p>
-
-<p><span  class="math">\[
+<h2 id=解決する問題>解決する問題</h2>
+<p>回転を表すクォータニオン$$\boldsymbol{r}$$と一回目の回転の軸の向きを表す単位ベクトル$$\vec{e}_q$$を入力とし，
+2 つの回転を表すクォータニオン$$\boldsymbol{p}, \boldsymbol{q}$$を求めます．
+2 回の回転$$\boldsymbol{p}, \boldsymbol{q}$$は
+$$\boldsymbol{q}$$による回転の後に続けて$$\boldsymbol{p}$$によって回転させると$$\boldsymbol{r}$$によって回転させたのと同じ結果を得られることと，
+$$\boldsymbol{p}, \boldsymbol{q}$$の回転軸は直交する（または少なくとも一方は無回転である）ことの 2 つの条件を満たします．</p>
+<h2 id=解法>解法</h2>
+<p>回転軸は回転によって変化しないので，$$\vec{e}_q=\boldsymbol{q}\vec{e}_q$$です．
+任意のベクトル$$\vec{v}$$で$$\boldsymbol{r}\vec{v}=\boldsymbol{p}\boldsymbol{q}\vec{v}$$が成り立ちます．
+ここに$$\vec{e}_q$$を代入すると</p>
+<p>$$
 \boldsymbol{r}\vec{e}_q = \boldsymbol{p}\boldsymbol{q}\vec{e}_q = \boldsymbol{p}\vec{e}_q
-\]</span></p>
-
+$$</p>
 <p>となります．
-2 回目の回転<span  class="math">\(\boldsymbol{p}\)</span>は<span  class="math">\(\vec{e}_q\)</span>を<span  class="math">\(\boldsymbol{r}\vec{e}_q\)</span>に動かすことが確認できました．</p>
-
+2 回目の回転$$\boldsymbol{p}$$は$$\vec{e}_q$$を$$\boldsymbol{r}\vec{e}_q$$に動かすことが確認できました．</p>
 <p>回転軸に垂直なベクトルは，回転後も回転軸に垂直です．
-2 つの回転<span  class="math">\(\boldsymbol{p}, \boldsymbol{q}\)</span>の軸は直交（<span  class="math">\(\vec{e}_p\perp\vec{e}_q\)</span>）していることから，
-<span  class="math">\(\vec{e}_p\perp\boldsymbol{p}\vec{e}_q\)</span>です．
-<span  class="math">\(\boldsymbol{r}\vec{e}_q = \boldsymbol{p}\vec{e}_q\)</span>
+2 つの回転$$\boldsymbol{p}, \boldsymbol{q}$$の軸は直交（$$\vec{e}_p\perp\vec{e}_q$$）していることから，
+$$\vec{e}_p\perp\boldsymbol{p}\vec{e}_q$$です．
+$$\boldsymbol{r}\vec{e}_q = \boldsymbol{p}\vec{e}_q$$
 だったので</p>
-
-<p><span  class="math">\[
+<p>$$
 \vec{e}_p\perp\boldsymbol{r}\vec{e}_q
-\]</span></p>
-
+$$</p>
 <p>が導けます．</p>
-
-<p>2 回目の回転<span  class="math">\(\boldsymbol{p}\)</span>は<span  class="math">\(\vec{e}_q\)</span>を<span  class="math">\(\boldsymbol{r}\vec{e}_q\)</span>に動かすことと，
-回転軸<span  class="math">\(\vec{e}_p\)</span>は 2 つのベクトル<span  class="math">\(\vec{e}_q\)</span>と<span  class="math">\(\boldsymbol{r}\vec{e}_q\)</span>の両方に垂直であることから，
-ほとんどの場合，<span  class="math">\(\boldsymbol{p}\)</span>の回転軸<span  class="math">\(\vec{e}_p\)</span>は</p>
-
-<p><span  class="math">\[
+<p>2 回目の回転$$\boldsymbol{p}$$は$$\vec{e}_q$$を$$\boldsymbol{r}\vec{e}_q$$に動かすことと，
+回転軸$$\vec{e}_p$$は 2 つのベクトル$$\vec{e}_q$$と$$\boldsymbol{r}\vec{e}_q$$の両方に垂直であることから，
+ほとんどの場合，$$\boldsymbol{p}$$の回転軸$$\vec{e}_p$$は</p>
+<p>$$
 \vec{e}_p=\frac{\vec{e}_q\times\boldsymbol{r}\vec{e}_q}{\left|\vec{e}_q\times\boldsymbol{r}\vec{e}_q\right|}
-\]</span></p>
-
-<p>で，回転角<span  class="math">\(\theta_p\)</span>は</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>で，回転角$$\theta_p$$は</p>
+<p>$$
 \theta_p=\cos^{-1}{\left(\vec{e}_q\cdot\boldsymbol{r}\vec{e}_q\right)}
-\]</span></p>
-
+$$</p>
 <p>です．
-以上から<span  class="math">\(\boldsymbol{p}\)</span>が求まるので，<span  class="math">\(\boldsymbol{q}\)</span>は</p>
-
-<p><span  class="math">\[
+以上から$$\boldsymbol{p}$$が求まるので，$$\boldsymbol{q}$$は</p>
+<p>$$
 \boldsymbol{q}=\bar{\boldsymbol{p}}\boldsymbol{r}
-\]</span></p>
-
+$$</p>
 <p>で得られます．</p>
-
-<p>例外は<span  class="math">\(\left|\vec{e}_q\times\boldsymbol{r}\vec{e}_q\right|=0\)</span>の場合です．
-<span  class="math">\(\left|\vec{e}_q\right|=\left|\boldsymbol{r}\vec{e}_q\right|=1\)</span>だから，この問題が起こるのは，
-<span  class="math">\(\vec{e}_q=\boldsymbol{r}\vec{e}_q\)</span>の場合と<span  class="math">\(\vec{e}_q=-\boldsymbol{r}\vec{e}_q\)</span>の場合に限られます．</p>
-
-<p><span  class="math">\(\vec{e}_q=\boldsymbol{r}\vec{e}_q\)</span>の場合，<span  class="math">\(\boldsymbol{r}\)</span>によって<span  class="math">\(\vec{e}_q\)</span>が変化しないことから，
-<span  class="math">\(\vec{e}_q\)</span>が回転軸だと分かります．
-そこで，<span  class="math">\(\boldsymbol{q}=\boldsymbol{r}\)</span>として，
-<span  class="math">\(\boldsymbol{p}\)</span>は無回転を表すクォータニオン<span  class="math">\(w=1, x=y=z=0\)</span>にすれば求める解になります．</p>
-
-<p><span  class="math">\(\vec{e}_q=-\boldsymbol{r}\vec{e}_q\)</span>の場合，<span  class="math">\(\boldsymbol{r}\)</span>によって<span  class="math">\(\vec{e}_q\)</span>と垂直な軸周りに 180 度回転していることがわかります．
-そこで，<span  class="math">\(\boldsymbol{p}=\boldsymbol{r}\)</span>とし，
-<span  class="math">\(\boldsymbol{q}\)</span>は無回転を表すクォータニオン<span  class="math">\(w=1, x=y=z=0\)</span>とすれば解が得られます．</p>
-
+<p>例外は$$\left|\vec{e}_q\times\boldsymbol{r}\vec{e}_q\right|=0$$の場合です．
+$$\left|\vec{e}_q\right|=\left|\boldsymbol{r}\vec{e}_q\right|=1$$だから，この問題が起こるのは，
+$$\vec{e}_q=\boldsymbol{r}\vec{e}_q$$の場合と$$\vec{e}_q=-\boldsymbol{r}\vec{e}_q$$の場合に限られます．</p>
+<p>$$\vec{e}_q=\boldsymbol{r}\vec{e}_q$$の場合，$$\boldsymbol{r}$$によって$$\vec{e}_q$$が変化しないことから，
+$$\vec{e}_q$$が回転軸だと分かります．
+そこで，$$\boldsymbol{q}=\boldsymbol{r}$$として，
+$$\boldsymbol{p}$$は無回転を表すクォータニオン$$w=1, x=y=z=0$$にすれば求める解になります．</p>
+<p>$$\vec{e}_q=-\boldsymbol{r}\vec{e}_q$$の場合，$$\boldsymbol{r}$$によって$$\vec{e}_q$$と垂直な軸周りに 180 度回転していることがわかります．
+そこで，$$\boldsymbol{p}=\boldsymbol{r}$$とし，
+$$\boldsymbol{q}$$は無回転を表すクォータニオン$$w=1, x=y=z=0$$とすれば解が得られます．</p>
 <p>以上の方法を C++で実装しました．
 <a href="https://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen というライブラリ</a>を使用しました．
-<a href="https://github.com/Actat/rotation-decomposition">Actat/rotation-decomposition</a>で
+<a href=https://github.com/Actat/rotation-decomposition>Actat/rotation-decomposition</a>で
 テストに使ったコードとともに公開しています．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;eigen3/Eigen/Geometry&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-std<span style="color:#f92672">::</span>tuple<span style="color:#f92672">&lt;</span>Eigen<span style="color:#f92672">::</span>Quaterniond, Eigen<span style="color:#f92672">::</span>Quaterniond<span style="color:#f92672">&gt;</span> decompose_rotation(
-    Eigen<span style="color:#f92672">::</span>Quaterniond r,
-    Eigen<span style="color:#f92672">::</span>Vector3d e_q) {
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;eigen3/Eigen/Geometry&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+std<span style=color:#f92672>::</span>tuple<span style=color:#f92672>&lt;</span>Eigen<span style=color:#f92672>::</span>Quaterniond, Eigen<span style=color:#f92672>::</span>Quaterniond<span style=color:#f92672>&gt;</span> decompose_rotation(
+    Eigen<span style=color:#f92672>::</span>Quaterniond r,
+    Eigen<span style=color:#f92672>::</span>Vector3d e_q) {
   e_q.normalize();
   r.normalize();
-  Eigen<span style="color:#f92672">::</span>Vector3d re_q <span style="color:#f92672">=</span> r <span style="color:#f92672">*</span> e_q;
-  <span style="color:#66d9ef">if</span> (re_q.isApprox(e_q)) {
-    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>forward_as_tuple(Eigen<span style="color:#f92672">::</span>Quaterniond(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), r);
-  } <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (re_q.isApprox(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> e_q)) {
-    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>forward_as_tuple(r, Eigen<span style="color:#f92672">::</span>Quaterniond(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));
-  } <span style="color:#66d9ef">else</span> {
-    Eigen<span style="color:#f92672">::</span>Vector3d e_p <span style="color:#f92672">=</span> (e_q.cross(re_q)).normalized();
-    <span style="color:#66d9ef">double</span> theta_p      <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>acos(e_q.dot(re_q));
-    <span style="color:#66d9ef">auto</span> p              <span style="color:#f92672">=</span> Eigen<span style="color:#f92672">::</span>Quaterniond(
-        std<span style="color:#f92672">::</span>cos(theta_p <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>), std<span style="color:#f92672">::</span>sin(theta_p <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> e_p.x(),
-        std<span style="color:#f92672">::</span>sin(theta_p <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> e_p.y(), std<span style="color:#f92672">::</span>sin(theta_p <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> e_p.z());
-    Eigen<span style="color:#f92672">::</span>Quaterniond q <span style="color:#f92672">=</span> p.conjugate() <span style="color:#f92672">*</span> r;
-    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>forward_as_tuple(p, q);
+  Eigen<span style=color:#f92672>::</span>Vector3d re_q <span style=color:#f92672>=</span> r <span style=color:#f92672>*</span> e_q;
+  <span style=color:#66d9ef>if</span> (re_q.isApprox(e_q)) {
+    <span style=color:#66d9ef>return</span> std<span style=color:#f92672>::</span>forward_as_tuple(Eigen<span style=color:#f92672>::</span>Quaterniond(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>), r);
+  } <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>if</span> (re_q.isApprox(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>*</span> e_q)) {
+    <span style=color:#66d9ef>return</span> std<span style=color:#f92672>::</span>forward_as_tuple(r, Eigen<span style=color:#f92672>::</span>Quaterniond(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>));
+  } <span style=color:#66d9ef>else</span> {
+    Eigen<span style=color:#f92672>::</span>Vector3d e_p <span style=color:#f92672>=</span> (e_q.cross(re_q)).normalized();
+    <span style=color:#66d9ef>double</span> theta_p      <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>acos(e_q.dot(re_q));
+    <span style=color:#66d9ef>auto</span> p              <span style=color:#f92672>=</span> Eigen<span style=color:#f92672>::</span>Quaterniond(
+        std<span style=color:#f92672>::</span>cos(theta_p <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>), std<span style=color:#f92672>::</span>sin(theta_p <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>*</span> e_p.x(),
+        std<span style=color:#f92672>::</span>sin(theta_p <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>*</span> e_p.y(), std<span style=color:#f92672>::</span>sin(theta_p <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>*</span> e_p.z());
+    Eigen<span style=color:#f92672>::</span>Quaterniond q <span style=color:#f92672>=</span> p.conjugate() <span style=color:#f92672>*</span> r;
+    <span style=color:#66d9ef>return</span> std<span style=color:#f92672>::</span>forward_as_tuple(p, q);
   }
 }
-</code></pre></div>
-<h2 id="テスト条件">テスト条件</h2>
-
+</code></pre></div><h2 id=テスト条件>テスト条件</h2>
 <p>クォータニオンとベクトルの組を入力し，条件を満たすクォータニオンの組が返されることを確認しました．</p>
-
 <p>入力</p>
-
 <ul>
 <li>無回転を表すクォータニオンを入力する場合</li>
 <li>クォータニオンの回転軸と平行な回転軸を入力する場合</li>
 <li>クォータニオンの回転軸と垂直な回転軸を入力する場合</li>
 <li>ランダムなクォータニオンと回転軸の組を入力する場合</li>
 </ul>
-
 <p>出力が満たすべき条件</p>
-
 <ul>
 <li>クォータニオンそれぞれが回転を表すクォータニオン（大きさが 1）であること</li>
-<li>2 回の回転が入力を分解したものであること（<span  class="math">\(\boldsymbol{r}=\boldsymbol{p}\boldsymbol{q}\)</span>であること）</li>
-<li>2 つのクォータニオンの回転軸が直交すること（<span  class="math">\(\vec{e}_p\cdot\vec{e}_q=0\)</span>であること）</li>
+<li>2 回の回転が入力を分解したものであること（$$\boldsymbol{r}=\boldsymbol{p}\boldsymbol{q}$$であること）</li>
+<li>2 つのクォータニオンの回転軸が直交すること（$$\vec{e}_p\cdot\vec{e}_q=0$$であること）</li>
 </ul>
-
-<h2 id="感想">感想</h2>
-
+<h2 id=感想>感想</h2>
 <p>同じ計算をしている人が見つからなかったので，モチベーションに誤りがあるかもしれません．
-こわいなぁ．</p><ul class="pa0">
-  
+こわいなぁ．</p><ul class=pa0>
 </ul>
-<div class="mt6">
-        
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://actat.github.io/" >
-    &copy; 2023 おなかすいた
-  </a>
-    <div>
-
-
-
-<a href="https://twitter.com/Actat85" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://github.com/Actat" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
+<div class="mt6 instapaper_ignoref">
 </div>
-  </div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://actat.github.io/>
+&copy; 2023 おなかすいた
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/Actat85 target=_blank rel=noopener class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+<a href=https://github.com/Actat target=_blank rel=noopener class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" aria-label="follow on GitHub——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span></a>
+</div>
+</div>
+</div>
 </footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
+<script type=text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WGWKSLYDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WGWKSLYDD');
-</script>
-
-    
-
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
-
-
-  </body>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9WGWKSLYDD')</script>
+</body>
 </html>
