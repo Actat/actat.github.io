@@ -9,8 +9,8 @@
 Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると説明されています．
 しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．">
 <meta name=generator content="Hugo 0.92.2">
-<meta name=robots content="noindex, nofollow">
-<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/ananke/css/main.min.6d5ae1c0305dcc5c00d4bbdaead708c912027edc0de833a6765f7e4a15d4767a.css>
 <meta property="og:title" content="【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい">
 <meta property="og:description" content="ROS 2 のexecutorの一種であるMultiThreadedExecutorは，複数のスレッドを用いて処理をパラレルに進めてくれます．
 同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
@@ -33,8 +33,9 @@ Reentrant Callback Group に設定したコールバックは，制約なくス�
 同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
 Reentrant Callback Group に設定したコールバックは，制約なくスケジューリングされ，他のコールバックや，同じコールバックの別のインスタンスが同時に実行される可能性があると説明されています．
 しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
 </head>
-<body class="ma0 avenir bg-near-white">
+<body class="ma0 avenir bg-near-white production">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
