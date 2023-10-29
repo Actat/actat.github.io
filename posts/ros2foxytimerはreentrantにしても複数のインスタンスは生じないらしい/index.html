@@ -27,7 +27,7 @@ Reentrant Callback Group に設定したコールバックは，制約なくス�
 しかし，実際には，create_wall_timer で設定したコールバックは Reentrant に設定しても，異なるインスタンスが同時に実行されることはないようです．"><meta itemprop=datePublished content="2023-06-25T13:50:31+09:00">
 <meta itemprop=dateModified content="2023-06-25T13:50:31+09:00">
 <meta itemprop=wordCount content="784">
-<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta itemprop=keywords content="ROS,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="【ROS2 Foxy】TimerはReentrantにしても複数のインスタンスは生じないらしい">
 <meta name=twitter:description content="ROS 2 のexecutorの一種であるMultiThreadedExecutorは，複数のスレッドを用いて処理をパラレルに進めてくれます．
 同時に進めて良い処理や同時に進めると不都合な処理をcallback groupを用いて設定します．
@@ -153,6 +153,9 @@ t1	1687669266	90307447
 <h2 id=結論>結論</h2>
 <p>タイトルの通り，Timer は Reentrant にしても複数のインスタンスは生じないようです．
 1.5 秒かかる処理を 1 秒ごとに呼び出したいときには別の方法をとる必要がありそうです．</p><ul class=pa0>
+<li class="list di">
+<a href=/tags/ros/ class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ROS</a>
+</li>
 </ul>
 <div class="mt6 instapaper_ignoref">
 </div>
