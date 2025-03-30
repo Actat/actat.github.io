@@ -25,7 +25,7 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="12.051771"
-     inkscape:cx="86.750736"
+     inkscape:cx="79.034027"
      inkscape:cy="75.673525"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
@@ -422,9 +422,10 @@
        sodipodi:nodetypes="cc" />
     <g
        id="g2973"
-       transform="translate(-6.0121787,-9.55)">
+       transform="translate(-6.0121787,-9.55)"
+       style="stroke-width:0.2;stroke-dasharray:none">
       <path
-         style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+         style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
          id="path2941"
          sodipodi:type="arc"
          sodipodi:cx="29.330128"
@@ -437,23 +438,23 @@
          d="m 32.79423,17.5 a 3.4641023,2 0 0 1 -1.732051,1.732051 3.4641023,2 0 0 1 -3.464103,0 A 3.4641023,2 0 0 1 25.866025,17.5"
          sodipodi:open="true" />
       <ellipse
-         style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+         style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
          id="path2941-4"
          cx="29.330128"
          cy="15.5"
          rx="3.4641023"
          ry="2" />
       <path
-         style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+         style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
          d="m 25.866025,15.5 v 2"
          id="path2965" />
       <path
-         style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+         style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
          d="m 32.794228,15.5 v 2"
          id="path2967" />
     </g>
     <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.14142;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        id="path3122"
        cx="25.605118"
        cy="-23.650635"
@@ -461,7 +462,7 @@
        ry="1.4141999"
        transform="rotate(120)" />
     <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.14142;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        id="path3122-2"
        cx="-9.0358992"
        cy="-43.650635"
@@ -469,79 +470,84 @@
        ry="1.4141999"
        transform="rotate(120)" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 3.3493651,3.5 8.6602539,5"
        id="path3208" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 18.937822,18.5 v -6"
        id="path3210"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 20.669873,17.5 v -6"
        id="path3212"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 18.937822,12.5 1.732051,-1"
        id="path3214"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 25.866025,22.5 v -6"
        id="path3210-5"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 27.598076,21.5 v -6"
        id="path3212-8"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 25.866025,16.5 1.732051,-1"
        id="path3214-3"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 23.267949,10 v 5"
        id="path3218"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
+       d="m 19.803848,12.999999 6.928203,4"
+       id="path3218-2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="M 7.6794919,6 V 34"
        id="path3258" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="M 27.598076,21.5 42.320508,9"
        id="path3260"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="M 20.669873,17.5 42.320508,9"
        id="path3262"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="M 18.937822,18.5 7.6794921,29"
        id="path3264"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="M 7.6794921,29 25.866025,22.5"
        id="path3268"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 18.937822,18.5 1.732051,-1"
        id="path3270"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 25.866025,22.5 1.732051,-1"
        id="path3272" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-dasharray:none"
        d="m 42.320508,8.9999998 c 0,0 0,5.0000002 0,5.0000002"
        id="path3274" />
     <circle
