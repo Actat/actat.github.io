@@ -2,29 +2,36 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>おなかすいた</title>
+<title>ChoreonoidをWSLにインストールする方法 | おなかすいた</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content>
+<meta name=description content="動力学シミュレーションに活用できるChoreonoidをWSLにインストールする手法を書き残す．
+バージョンはChoreonoid v2.2.0，Windows 11 24H2，WSL 2 Ubuntu24.04である．">
 <meta name=generator content="Hugo 0.92.2">
 <meta name=robots content="index, follow">
 <link rel=stylesheet href=/ananke/css/main.min.c218715ea76fa6ea4fd1f310459b11effa883e668ed1cf6b67827ea82cf37577.css>
 <link rel="shortcut icon" href=/images/about/leaf.JPG type=image/x-icon>
-<link href=/posts/index.xml rel=alternate type=application/rss+xml title=おなかすいた>
-<link href=/posts/index.xml rel=feed type=application/rss+xml title=おなかすいた>
-<meta property="og:title" content="Posts">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://actat.github.io/posts/">
-<meta itemprop=name content="Posts">
-<meta itemprop=description content><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Posts">
-<meta name=twitter:description content>
+<meta property="og:title" content="ChoreonoidをWSLにインストールする方法">
+<meta property="og:description" content="動力学シミュレーションに活用できるChoreonoidをWSLにインストールする手法を書き残す．
+バージョンはChoreonoid v2.2.0，Windows 11 24H2，WSL 2 Ubuntu24.04である．">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://actat.github.io/posts/choreonoid_wsl/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2025-04-29T19:55:38+09:00">
+<meta property="article:modified_time" content="2025-04-29T19:55:38+09:00">
+<meta itemprop=name content="ChoreonoidをWSLにインストールする方法">
+<meta itemprop=description content="動力学シミュレーションに活用できるChoreonoidをWSLにインストールする手法を書き残す．
+バージョンはChoreonoid v2.2.0，Windows 11 24H2，WSL 2 Ubuntu24.04である．"><meta itemprop=datePublished content="2025-04-29T19:55:38+09:00">
+<meta itemprop=dateModified content="2025-04-29T19:55:38+09:00">
+<meta itemprop=wordCount content="308">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="ChoreonoidをWSLにインストールする方法">
+<meta name=twitter:description content="動力学シミュレーションに活用できるChoreonoidをWSLにインストールする手法を書き残す．
+バージョンはChoreonoid v2.2.0，Windows 11 24H2，WSL 2 Ubuntu24.04である．">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
 <body class="ma0 sans-serif bg-near-white production">
-<header class="cover bg-top" style=background-image:url(https://actat.github.io/images/mt_fuji.JPG)>
-<div class=bg-black-60>
+<header>
+<div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
 <div class="flex-l justify-between items-center center">
 <a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
@@ -63,232 +70,61 @@ Posts
 </div>
 </div>
 </nav>
-<div class="tc-l pv4 pv6-l ph3 ph4-ns">
-<h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-Posts
-</h1>
-</div>
 </div>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-140153146-1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </header>
 <main class=pb7 role=main>
-<article class="pa3 pa4-ns nested-copy-line-height">
-<section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-<section class="flex-ns flex-wrap justify-around mt5">
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_chimera/ class="link black dim">
-Chimera納車
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/share?url=https://actat.github.io/posts/choreonoid_wsl/&text=Choreonoid%e3%82%92WSL%e3%81%ab%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</span>
 </a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>先日 Chimera を入手した．
-全部のオーダを回収できたので 279 も頑張りたい．</p>
+</div>
+<h1 class="f1 athelas mt3 mb1">ChoreonoidをWSLにインストールする方法</h1>
+<time class="f6 mv4 dib tracked" datetime=2025-04-29T19:55:38+09:00>4月 29, 2025</time>
+</header>
+<div class="nested-copy-line-height lh-copy sans-serif bg-near-white f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>動力学シミュレーションに活用できる<a href=https://choreonoid.org/ja/>Choreonoid</a>をWSLにインストールする手法を書き残す．
+バージョンはChoreonoid v2.2.0，Windows 11 24H2，WSL 2 Ubuntu24.04である．</p>
+<h2 id=インストール法>インストール法</h2>
+<p>基本的には<a href=https://choreonoid.org/ja/manuals/latest/install/index.html>インストール</a>にしたがって進めれば良い．
+変更した点として，boostがない旨のエラーが出るため<code>libboost-all-dev</code>を追加でインストールする点と，PKG_CONFIG_PATHを設定する点がある．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt update <span style=color:#f92672>&amp;&amp;</span> sudo apt upgrade -y <span style=color:#f92672>&amp;&amp;</span> sudo apt autoremove -y
+sudo apt install -y git libboost-all-dev
+git clone https://github.com/choreonoid/choreonoid.git
+cd choreonoid
+git checkout v2.2.0
+cat /etc/os-release
+misc/script/install-requisites-ubuntu-24.04.sh
+mkdir build <span style=color:#f92672>&amp;&amp;</span> cd build
+cmake -DCMAKE_INSTALL_PREFIX<span style=color:#f92672>=</span>$HOME/.local ..
+make prefix<span style=color:#f92672>=</span>$HOME/.local -j4
+make prefix<span style=color:#f92672>=</span>$HOME/.local install
+echo <span style=color:#e6db74>&#39;if [ -z $PKG_CONFIG_PATH ]; then
+</span><span style=color:#e6db74>    export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig
+</span><span style=color:#e6db74>else
+</span><span style=color:#e6db74>    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig
+</span><span style=color:#e6db74>fi&#39;</span> &gt;&gt; $HOME/.profile
+</code></pre></div><h2 id=動作確認>動作確認</h2>
+<p><a href=https://github.com/Actat/kickskater>kickskater</a> が期待通りの動作をすることを確認した．</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone git@github.com:Actat/kickskater.git
+cd kickskater
+make
+choreonoid KickSkater.cnoid
+</code></pre></div><ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
 </div>
 </div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_cwe_renaissance/ class="link black dim">
-CWEルネサンスを終えて
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-CW お疲れさまでした． GM 凍結から 1 週間以上経っているしもう大事なお買い物は終わっている頃でしょう． 色々あって少し遅くなりましたが，書いておきます． [LIV_]というクランで参加してました． 車両に加えてお買い物ポイントまでもらってしまいました． ありがとうございました． リアルの忙しいタイミングとぶつかって
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_obj260/ class="link black dim">
-Obj.260納車
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>Object 260 を入手した．
-T 55A までのミッションは全て自力で回収し，Obj.260 のミッションは LT のみクリアして他の 4 ルートはオーダーで飛ばした．
-かれこれ 2 年近く頭の片隅にあった目標を達成して大変満足した．</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/raspberrypi_setup/ class="link black dim">
-RaspberryPiのセットアップ
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Raspberry Pi をセットアップする手順を書き残しておく． ディスプレイをつなぐのは面倒なので SSH で全てを済ませる． OS は Raspberry Pi Imager で raspbian をインストールする． 手元の Raspberry Pi 2 Model B をセットアップしながら書いているので Wi-Fi 周りの情報はない． Raspberry Pi Imager のダウンロード 公式のダウンロードページ（https://www.raspberrypi.o
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/diff_javascript/ class="link black dim">
-JavaScriptでdiffを書いた
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>必要になったので JavaScript で diff を書いた．
-軽く調べたところ Wu のアルゴリズム[1]が優秀ということだったのでそのままコードに起こした．
-編集距離や SES(Shortest Edit Script)，LCS(Longest Common Subsequence)といった概念やエディットグラフを学んだ．</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_random_battle/ class="link black dim">
-久しぶりにランダム戦をした話
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>CWE が終わって久しぶりにランダム戦をしている話．</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_cwe_metal_wars2/ class="link black dim">
-CWEメタル・ウォーズの気持ち
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>おきもちをひょうめいしろしろといわれるので．</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_cwe_personalbonus/ class="link black dim">
-個人ボーナスのレベルの選び方
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-個人ボーナスのシステム上，名声の街道に表示される個人名声ポイントは非線形性を持つ函数を通った後の数字になる． ボーダーの予想やボーナスレベルの選択といった操作には個人名声ポイントの素点を用いる必要がある． 具体的な計算方法を説明する． 個人ボーナスとは ルールに個人ボーナスという項目がある． 個人ボーナス プレ
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_cwe_metal_wars/ class="link black dim">
-CWEメタル・ウォーズを終えて
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-ACWP1 で参加した大多数の人に感謝しています． 突然運営のタグを持って偉そうにあれをしてくれこれをしてくれと言い出した私についてきてくれてありがとう． 最後まで乗り切れたのは協力的に振舞ってくれた全員のおかげです． この記事の目的は自分個人の経験としては 2 回目，ACWP1 史上初の CWE 本格参戦を終えての感想と課題を
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/wot_cwe_introduction/ class="link black dim">
-CWEに初参加する人への簡単な説明
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-要約 初めて CWE に参加する人に向けて簡単な前提知識を説明する． 複数のクラメンに複数回に分けて話しているのでここに書き起こしておく． CWE がどんな感じに進行していくのか，自分はどんなことを頑張ればいいのかを事前に一度考えるきっかけとして利用してもらえるとうれしい． CWE に初めて参加する人の大半は前半から中盤にかけ
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/beatsaber_ranking_distribution/ class="link black dim">
-Beat Saberのグローバルランキングの分布
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-<p>Beat Saber は VR リズムゲームで，有志が作成した ScoreSaber という仕組みでプレイヤーの腕前を Performance Point(pp)として測定，比較できます．
-ScoreSaber の Global Ranking の全体の pp の分布を調べました．
-人口の分布は富士山型でなだらかでした．
-様々な難易度のランク譜面があり，その難易度の変化は連続的だと読み解きました．</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/camera_first_impression/ class="link black dim">
-沼の怖さを感じた
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-ラメラをご存知だろうか． 旭山動物園のチリーフラミンゴの解説には「嘴の縁は細かいクシ状になっていて、「ラメラ」と呼ばれます。このラメラを使い餌となるものだけを濾しとって食べ」と書かれている． フラミンゴが濾して食事をすること，そして，そのために嘴の縁がギザギザになっていることにボーっと生きてきた私は 23 年
-</div>
-</div>
-</div>
-</div>
-</section>
-<ul class="pagination pagination-default">
-<li class=page-item>
-<a href=/posts/ aria-label=First class=page-link role=button><span aria-hidden=true>&#171;&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/posts/ aria-label=Previous class=page-link role=button><span aria-hidden=true>&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/posts/ aria-label="Page 1" class=page-link role=button>1</a>
-</li>
-<li class="page-item active">
-<a aria-current=page aria-label="Page 2" class=page-link role=button>2</a>
-</li>
-<li class=page-item>
-<a href=/posts/page/3/ aria-label="Page 3" class=page-link role=button>3</a>
-</li>
-<li class=page-item>
-<a href=/posts/page/3/ aria-label=Next class=page-link role=button><span aria-hidden=true>&#187;</span></a>
-</li>
-<li class=page-item>
-<a href=/posts/page/3/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
-</li>
-</ul></article>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
 </main>
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
